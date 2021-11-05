@@ -1,0 +1,114 @@
+commit 29b44201cb3986c4942f25a9bd30aae289cd4613
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 07:11:23 2021 +0200
+
+    poistettu 1, rename f2 -> f22
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 876000b520d70fd557ddf561bea8f3451045c3d5
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 07:07:33 2021 +0200
+
+    kolmas done
+
+ kolmas.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 5f56e5d0f044abd8535000503f256fda2db8f87a
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 07:06:30 2021 +0200
+
+     lisätty tiedostot 1-3
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 7f5994d23e036659aa4c92f2fa21ec9e0119b374
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 06:53:41 2021 +0200
+
+    Muutettua ekaa ja kolmatta
+
+ eka.txt    | 7 +++----
+ kolmas.txt | 6 +++++-
+ 2 files changed, 8 insertions(+), 5 deletions(-)
+
+commit dfce2184c6dd8164895995010047906aaa1f33ce
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 06:50:21 2021 +0200
+
+    Uudelleen nimetty tiedosto -> eka.tx
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c6be389cc9a5aa43ca22fb38f27fb6efafbf5bd2
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 06:37:05 2021 +0200
+
+    poistettu toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 42a441411d33dcc0079032a1ac3bdc0e8a681343
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 06:30:17 2021 +0200
+
+    muutettu tiedostoa
+
+ tiedosto.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit d3fe99ecc5e6762b49d61d98aa111deb84a03ffe
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 06:28:26 2021 +0200
+
+    lisätty tietoa
+
+ kolmas.txt   |  1 +
+ tiedosto.txt | 11 +++++++++++
+ toinen.txt   |  1 +
+ 3 files changed, 13 insertions(+)
+
+commit b13070d51681d168cb2514a860745b87c230fabc
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 05:51:59 2021 +0200
+
+    Lisätty uusi tiedosto ja editoitut toista ja kolmatta
+
+ stuff/tietoa.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4a15a1c7e662c23f84fa60581e73b9c042eb08f3
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 05:49:29 2021 +0200
+
+    Lisätty kolmas tiedosto
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2698714a746346051c319fd39a4b49dd4855fa81
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 05:46:46 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit bb8005ef188394ff9ad13c1a27714e1a37bac14e
+Author: Jyri P <jyri.poussu@gmail.com>
+Date:   Fri Nov 5 05:39:50 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
