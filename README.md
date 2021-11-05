@@ -1,3 +1,5 @@
-<h1> Ohjelmistotekniikka harjoitustyö </h1> 
+<h1> Ohjelmistotekniikka, harjoitustyö </h1> 
+<h2> Tehtävät</h2>
+<h3> Viikko 1</h3>
+[komentorivi.txt](https://github.com/Branuz/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-Tämä teksti on osana **viikon 1** _md notaatiota_.
