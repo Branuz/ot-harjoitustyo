@@ -1,7 +1,25 @@
 .
-├── laskarit
-│   └── viikko1
-│       ├── gitlog.txt
-│       └── komentorivi.txt
-└── README.md
+kurssit
+└── ot2021
+    └── viikko1
+        └── Unicafe
+            ├── pom.xml
+            └── src
+                ├── main
+                │   └── java
+                │       └── com
+                │           └── mycompany
+                │               └── unicafe
+                │                   ├── Kassapaate.java
+                │                   ├── Maksukortti.java
+                │                   └── Paaohjelma.java
+                └── test
+                    └── java
+                        └── com
+                            └── mycompany
+                                └── unicafe
+                                    └── MaksukorttiTest.java
+
+14 directories, 5 files
+
 
