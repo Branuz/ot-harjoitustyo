@@ -39,4 +39,23 @@ To be made
         - The game itself will give a random word from the chosen sets of words that the user will ne to provide a translation for. If the user is successfull they will be given a green light and passed to the next word. If the user fails the correct answer will be provided before the next words is brought up.
        ---
        - <h3>Word book </h3>
-       -  In the word book the user will be able to add new words or lists of words that can be selected and used in the word gane selection when the user wishes to pratice these. The user will also be able to delete these lists. 
+       -  In the word book the user will be able to add new lists of words that can be selected and used in the word game selection when the user wishes to pratice these. The user will also be able to edit and delete already excisting lists they have made. These lists will be saved in a database so that the user can access their lists from multiple devices.
+       ---
+<h3>Achivements</h3>
+
+In the achivements section of the application the user will see the progress they have made in the courses and the amount of tasks they have completed. This section may also show information such as the longest strike of consecutive correctly translated words in the word game or other data based on their performance. The user may also get small icons as rewards to be shown in the section after passing all the tasks in a specific course section.
+
+<h3>Logout</h3> 
+
+By clicking the logout icon the user will be logged out of the application so that a different user may login from the same computer.
+
+<h2>Ideas for further developement</h2>
+
+After creating the working basic version of the application it may be expanded by adding some of the following functionalities.
+- New exercise types.
+- Ability for the moderator to create further chapters in the application.
+- Expanding the chapters to contain exercises and topics from new languages. 
+- Ability to choose what language the user wishes to study.
+- Options section that could contain options such as changing the language of the application
+- More statistics and rewards based on the students progress.
+- Timed notification or popup to remind the user to complete their daily study goal.
