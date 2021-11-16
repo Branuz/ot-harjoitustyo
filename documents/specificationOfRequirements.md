@@ -1,14 +1,14 @@
 <h1>Specifications of requirements</h1>
 <h2>Purpose of the application</h2>
 The purpose of this application is to help and give users a fun and easy way of learning a new language. 
-To do so the application will provide a gamified approach into learning with its achivement and daily goals section that is linked with the users progress during their learning period. With the use of this application the users will have an easy access to preset chapters that will include different types of tasks such as filling up a sentence and giving a translations for words.
-By completing these tasks the user will see their progress and hopefully will be more motivated to continue their learning.
+To do so the application will provide a gamified approach into learning with its achivement and daily goals section that is linked with the users progress during their learning period. With the use of this application, the users will have an easy access to preset chapters that will include different types of tasks such as filling up a sentence and giving a translations for words.
+By completing these tasks, the user will see their progress and hopefully will be more motivated to continue their learning.
 <h2>Users</h2>
 At first there will only be a single user format that will have access to the premade tasks and to the ability of adding their 
 own wordlists which can be combined with the words already provided by the application.
-In the future there might be an extra role for a moderator / teacher who has the ability to add new chapters and possibly new tasks for the users to complete.
+In the future, there might be an extra role for a moderator / teacher who has the ability to add new chapters and possibly new tasks for the users to complete.
 <h2>Interface sketch</h2>
-This will act as a sketch that shows how some of the main views of the program would look like. This is however not the final look and it does not contain all the views of the application.
+This will act as a sketch that shows how some of the main views of the program would look like. This is, however, not the final look and it does not contain all the views of the application.
 <img src="https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/photos/flow_interface_sketch.png" width="600">
 
 <h2>Programs functionality</h2>
@@ -26,7 +26,7 @@ This will act as a sketch that shows how some of the main views of the program w
 
 <h3>After login</h3>
 
-  - In the main gui there will be 3 sections to choose from at the top that are main menu, achievements and logout
+  - In the main GUI, there will be 3 sections to choose from at the top that are main menu, achievements and logout.
     - Main menu will be containing 3 options for chapters, word game and word book. These sections will lead to corresponding sections of the program.
      ---
      - <h3>Chapters</h3>
@@ -40,11 +40,11 @@ This will act as a sketch that shows how some of the main views of the program w
         - The game itself will give a random word from the chosen sets of words that the user will ne to provide a translation for. If the user is successfull they will be given a green light and passed to the next word. If the user fails the correct answer will be provided before the next words is brought up.
        ---
        - <h3>Word book </h3>
-       -  In the word book the user will be able to add new lists of words that can be selected and used in the word game selection when the user wishes to pratice these. The user will also be able to edit and delete already excisting lists they have made. These lists will be saved in a database so that the user can access their lists from multiple devices.
+       -  In the word book the user will be able to add new lists of words that can be selected and used in the word game selection when the user wishes to practice these. The user will also be able to edit and delete already excisting lists they have made. These lists will be saved in a database so that the user can access their lists from multiple devices.
        ---
 <h3>Achivements</h3>
 
-In the achivements section of the application the user will see the progress they have made in the courses and the amount of tasks they have completed. This section may also show information such as the longest strike of consecutive correctly translated words in the word game or other data based on their performance. The user may also get small icons as rewards to be shown in the section after passing all the tasks in a specific course section.
+In the achivements section of the application the user will see the progress they have made in the courses and the amount of tasks they have completed. This section may also show informations such as the longest strike of consecutive correctly translated words in the word game or other data based on their performance. The user may also get small icons as rewards to be shown in the section after passing all the tasks in a specific course section.
 
 <h3>Logout</h3> 
 
