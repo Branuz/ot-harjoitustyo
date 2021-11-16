@@ -8,7 +8,8 @@ At first there will only be a single user format that will have access to the pr
 own wordlists which can be combined with the words already provided by the application.
 In the future there might be an extra role for a moderator / teacher who has the ability to add new chapters and possibly new tasks for the users to complete.
 <h2>Interface sketch</h2>
-To be made
+This will act as a sketch that shows how some of the main views of the program would look like. This is however not the final look and it does not contain all the views of the application.
+<img src="https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/photos/flow_interface_sketch.png" width="600">
 
 <h2>Programs functionality</h2>
 <h3>Before login</h3>
