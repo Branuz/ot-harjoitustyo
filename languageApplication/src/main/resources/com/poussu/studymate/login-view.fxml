@@ -77,6 +77,11 @@
                   <Font size="14.0" />
                </font>
             </Label>
+            <Button layoutX="135.0" layoutY="492.0" mnemonicParsing="false" opacity="0.92" prefHeight="30.0" prefWidth="163.0" style="-fx-background-color: #34445e;" text="Create account" textFill="#dacccc">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>
