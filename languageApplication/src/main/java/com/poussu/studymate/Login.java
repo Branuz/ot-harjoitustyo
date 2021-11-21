@@ -7,14 +7,23 @@ import javafx.scene.control.TextField;
 
 public class Login {
     @FXML
-    private Label welcomeText;
+    private Label wrongLogin;
     @FXML
     private TextField userName;
     @FXML
     private PasswordField password;
 
     @FXML
-    protected void onHelloButtonClick() {
-        if(userName.getText().toString().equals("Admin") && password.getText().equals("1234")) System.out.println("working");
+    private void onHelloButtonClick() {
+        Main m = new Main();
+
+        if(userName.getText().toString().equals("Admin") && password.getText().equals("1234"))System.out.println("Working");
+
+            else if(userName.getText().isEmpty() || password.getText().isEmpty()){
+                wrongLogin.setText("Username or password is empty");
+                
+            } else if(!userName.getText().toString().equals("Admin") || !password.getText().equals("1234")) {
+                wrongLogin.setText("Wrong username or password");
+            }
     }
 }
