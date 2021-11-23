@@ -1,8 +1,14 @@
 <h1> Ohjelmistotekniikka, harjoitustyö </h1> 
 
+
 [Työaikakirjanpito](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/tuntikirjanpito.md)
 
 [Alustava määrittelydokumentti](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/specificationOfRequirements.md)
+
+<h2>Ohjeet</h2>
+
+Ohjelman saa suoritettua komennolla: mvn compile exec:java -Dexec.mainClass=com.poussu.studymate.Main
+
 
 <h2> Tehtävät</h2>
 <h3> Viikko 1</h3>
