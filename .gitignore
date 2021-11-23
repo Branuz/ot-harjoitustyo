@@ -5,5 +5,6 @@
 /languageApplication/target
 **/.idea/workspace.xml **/.idea/tasks.xml
 /languageApplication/.idea/
-/languageApplication/.vscode/
+/languageApplication/.settings
+/languageApplication/.vscode
 
