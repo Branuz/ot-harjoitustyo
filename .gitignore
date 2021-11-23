@@ -4,5 +4,6 @@
 /laskarit/viikko2/Unicafe/nbproject/
 /languageApplication/target
 **/.idea/workspace.xml **/.idea/tasks.xml
-**/.idea/
-**/vscode/
+/languageApplication/.idea/
+/languageApplication/.vscode/
+
