@@ -27,20 +27,26 @@ public class CreateAccount {
     private void onCreateAccountClick() throws IOException {
         Main m = new Main();
 
+        //Checking if everything is filled correctly.
         boolean emailCheck = checkIfEmptyTextField(email);
         boolean userNameCheck = checkIfEmptyTextField(userName);
         boolean passwordCheck =  checkIfEmptyPasswordField(password);
         boolean matchingPasswords = checkIfMatchingPasswords(password, passwordReEnter);
         boolean passwordReCheck = checkIfEmptyPasswordField(passwordReEnter);
-
+        
+        //Connecting to db and changing to login view.
         if(emailCheck && userNameCheck && passwordCheck && passwordReCheck && matchingPasswords){
+
             DataBaseConnection db = new DataBaseConnection();
-            db.connect();
+            String input = "INSERT INTO Users(email, name, password) VALUES (?,?,?)";
+            String[] values = {email.getText().toString(), userName.getText().toString(), password.getText().toString()};
+
+            db.connect(input, "INSERT", values);
             m.changeScene("login-view.fxml");
         }
     }
 
-    
+    //Used to check for empty text fields
     private boolean checkIfEmptyTextField(TextField text){
         if(text.getText().isEmpty()){
             text.setStyle(styleError);
@@ -51,7 +57,7 @@ public class CreateAccount {
         }
     }
 
-    
+    //Used to check for empty password fields
     private boolean checkIfEmptyPasswordField(PasswordField pw){
         if(pw.getText().isEmpty()){
             pw.setStyle(styleError);

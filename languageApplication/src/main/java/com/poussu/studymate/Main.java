@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.PieChart.Data;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,12 +21,17 @@ public class Main extends Application {
         stage.show();
     }
 
+    //Changes to a new GUI view
     public void changeScene(String fxml) throws IOException{
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
         stg.getScene().setRoot(pane);
     }
 
     public static void main(String[] args) {
+        //Prepares the sqlite database before launch
+        DataBaseConnection db = new DataBaseConnection();
+        String setup = "CREATE TABLE Users (id INTEGER PRIMARY KEY, email TEXT, name TEXT, password TEXT)";
+        db.connect(setup, "CREATE", new String[0]);
         launch();
     }
 }
