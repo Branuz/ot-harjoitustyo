@@ -19,3 +19,12 @@
 [Unicafe: KassapaateTest.java](https://github.com/Branuz/ot-harjoitustyo/blob/master/laskarit/viikko2/Unicafe/src/test/java/com/mycompany/unicafe/KassapaateTest.java)
 
 [Unicafe: KattavuusRaportti.png](https://github.com/Branuz/ot-harjoitustyo/blob/master/laskarit/viikko2/Kattavuusraportti.png)
+
+<h3> Viikko 3</h3>
+
+[Monopoly1-2.jpg](https://github.com/Branuz/ot-harjoitustyo/blob/master/laskarit/viikko3/Monopoly_1-2.jpg)
+
+
+[Sekvenssi3.png](https://github.com/Branuz/ot-harjoitustyo/blob/master/laskarit/viikko3/Sekvenssi3.png)
+
+[Sekvenssi4.png](https://github.com/Branuz/ot-harjoitustyo/blob/master/laskarit/viikko3/Sekvenssi4.png)
