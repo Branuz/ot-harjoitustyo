@@ -16,8 +16,9 @@ public class Login {
     @FXML
     private PasswordField password;
     @FXML
+
+    
     private void onLoginButtonClick() throws IOException {
-        
         if(checkLoginDetails()){
             m.changeScene("main-menu.fxml");
         }
@@ -29,14 +30,13 @@ public class Login {
             }
     }
 
+    //Confirms that the login information matches database.
     private boolean checkLoginDetails(){
-
         try {
             Connection db = DriverManager.getConnection("jdbc:sqlite:studyMate.db");
             Statement s = db.createStatement();
             ResultSet r = s.executeQuery("SELECT * FROM Users WHERE name='"+userName.getText().toString()+"'"+" AND password='"+password.getText().toString()+"'"+
            " OR email='"+userName.getText().toString()+"'"+ " AND password='"+password.getText().toString()+"'");
-            System.out.println(r.getString("name"));
             if (r.next()) {
                 return true;
             }else {
