@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public class Login {
     private Main m = new Main();
@@ -15,11 +16,10 @@ public class Login {
     private TextField userName;
     @FXML
     private PasswordField password;
-    @FXML
 
-    
+    @FXML
     private void onLoginButtonClick() throws IOException {
-        if(checkLoginDetails()){
+        if(checkLoginDetails(userName.getText().toString(), password.getText().toString())){
             m.changeScene("main-menu.fxml");
         }
             else if(userName.getText().isEmpty() || password.getText().isEmpty()){
@@ -31,12 +31,12 @@ public class Login {
     }
 
     //Confirms that the login information matches database.
-    private boolean checkLoginDetails(){
+    public boolean checkLoginDetails(String username, String pw){
         try {
             Connection db = DriverManager.getConnection("jdbc:sqlite:studyMate.db");
             Statement s = db.createStatement();
-            ResultSet r = s.executeQuery("SELECT * FROM Users WHERE name='"+userName.getText().toString()+"'"+" AND password='"+password.getText().toString()+"'"+
-           " OR email='"+userName.getText().toString()+"'"+ " AND password='"+password.getText().toString()+"'");
+            ResultSet r = s.executeQuery("SELECT * FROM Users WHERE name='"+username+"'"+" AND password='"+pw+"'"+
+           " OR email='"+username+"'"+ " AND password='"+pw+"'");
             if (r.next()) {
                 return true;
             }else {
