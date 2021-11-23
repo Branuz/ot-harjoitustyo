@@ -7,8 +7,9 @@
 
 <h2>Ohjeet</h2>
 
-Ohjelman saa suoritettua komennolla: mvn compile exec:java -Dexec.mainClass=com.poussu.studymate.Main
+Ohjelman saa suoritettua hakemistossa languageApplication komennolla: mvn compile exec:java -Dexec.mainClass=com.poussu.studymate.Main
 
+Sekä testattua komennolla mvn test
 
 <h2> Tehtävät</h2>
 <h3> Viikko 1</h3>
