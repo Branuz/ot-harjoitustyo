@@ -8,16 +8,15 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class Login {
+    private Main m = new Main();
     @FXML
     private Label wrongLogin;
     @FXML
     private TextField userName;
     @FXML
     private PasswordField password;
-
     @FXML
-    private void onHelloButtonClick() throws IOException {
-        Main m = new Main();
+    private void onLoginButtonClick() throws IOException {
 
         if(userName.getText().toString().equals("Admin") && password.getText().equals("1234")){
             m.changeScene("main-menu.fxml");
@@ -28,5 +27,10 @@ public class Login {
             } else if(!userName.getText().toString().equals("Admin") || !password.getText().equals("1234")) {
                 wrongLogin.setText("Wrong username or password");
             }
+    }
+
+    @FXML
+    private void onCreateAccountButtonClick() throws IOException {
+        m.changeScene("newUser-menu.fxml");
     }
 }

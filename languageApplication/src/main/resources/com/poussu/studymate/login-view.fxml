@@ -14,12 +14,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="450.0" style="-fx-background-color: #34445e;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poussu.studymate.Login">
    <center>
-      <AnchorPane prefHeight="618.0" prefWidth="431.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="620.0" prefWidth="430.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="login" defaultButton="true" layoutX="69.0" layoutY="422.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Login" textFill="WHITE">
+            <Button id="login" defaultButton="true" layoutX="69.0" layoutY="422.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Italic" size="24.0" />
                </font>
@@ -29,7 +28,7 @@
                   <Font size="20.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="password" layoutX="100.0" layoutY="312.0" prefHeight="46.0" prefWidth="279.0" promptText="Password" style="-fx-background-color: #34445e;">
+            <PasswordField fx:id="password" layoutX="100.0" layoutY="312.0" prefHeight="47.0" prefWidth="292.0" promptText="Password" style="-fx-background-color: #34445e;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -77,7 +76,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button layoutX="135.0" layoutY="492.0" mnemonicParsing="false" opacity="0.92" prefHeight="30.0" prefWidth="163.0" style="-fx-background-color: #34445e;" text="Create account" textFill="#dacccc">
+            <Button layoutX="135.0" layoutY="492.0" mnemonicParsing="false" onAction="#onCreateAccountButtonClick" opacity="0.92" prefHeight="30.0" prefWidth="163.0" style="-fx-background-color: #34445e;" text="Create account" textFill="#dacccc">
                <font>
                   <Font size="17.0" />
                </font>
