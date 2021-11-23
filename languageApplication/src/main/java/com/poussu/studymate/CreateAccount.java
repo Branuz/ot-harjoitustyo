@@ -34,6 +34,8 @@ public class CreateAccount {
         boolean passwordReCheck = checkIfEmptyPasswordField(passwordReEnter);
 
         if(emailCheck && userNameCheck && passwordCheck && passwordReCheck && matchingPasswords){
+            DataBaseConnection db = new DataBaseConnection();
+            db.connect();
             m.changeScene("login-view.fxml");
         }
     }
@@ -62,6 +64,8 @@ public class CreateAccount {
 
     private boolean checkIfMatchingPasswords(PasswordField pw, PasswordField pwRe){
         if(pw.getText().equals(pwRe.getText())){
+            pwLabel1.setText("");
+            pwLabel2.setText("");
             return true;
         }else{
             pwLabel1.setText("Passwords don't match");
