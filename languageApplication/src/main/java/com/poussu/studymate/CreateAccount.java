@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 public class CreateAccount {
     private String style = "-fx-background-color: #34445e; ; -fx-text-fill: #FFFFFF";
     private String styleError = "-fx-border-color: red; -fx-background-color: #34445e; -fx-text-fill: #FFFFFF";
+    private String loggedUser;
 
     @FXML
     private TextField email;
@@ -40,7 +41,7 @@ public class CreateAccount {
             DataBaseConnection db = new DataBaseConnection();
             String input = "INSERT INTO Users(email, name, password) VALUES (?,?,?)";
             String[] values = {email.getText().toString(), userName.getText().toString(), password.getText().toString()};
-
+            loggedUser = userName.getText().toString();
             db.connect(input, "INSERT", values);
             m.changeScene("login-view.fxml");
         }
@@ -68,6 +69,7 @@ public class CreateAccount {
         }
     }
 
+    //Used to check for matching password inputs
     private boolean checkIfMatchingPasswords(PasswordField pw, PasswordField pwRe){
         if(pw.getText().equals(pwRe.getText())){
             pwLabel1.setText("");
@@ -78,6 +80,11 @@ public class CreateAccount {
             pwLabel2.setText("Passwords don't match");
             return false;
         }
+    }
+
+    public String getLoggedUser(){
+
+        return loggedUser;
     }
 
     

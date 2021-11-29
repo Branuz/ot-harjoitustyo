@@ -3,6 +3,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -68,33 +70,35 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="68.0" layoutY="200.0" mnemonicParsing="false" onAction="#dictionaryButton" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Dictionary" textFill="WHITE">
+            <ListView layoutX="215.0" layoutY="62.0" prefHeight="437.0" prefWidth="214.0" style="-fx-background-color: #40556b;" />
+            <TextField layoutX="214.0" prefHeight="52.0" prefWidth="215.0" promptText="Search">
                <font>
-                  <Font size="24.0" />
+                  <Font size="20.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="68.0" layoutY="325.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Word Game" textFill="WHITE">
+            </TextField>
+            <Label layoutX="11.0" layoutY="-2.0" prefHeight="57.0" prefWidth="198.0" text="Welcome to dictionary!" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font size="15.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="68.0" layoutY="75.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Chapters" textFill="WHITE">
+            </Label>
+            <Label layoutX="11.0" layoutY="53.0" prefHeight="19.0" prefWidth="185.0" text="In here you can add new lists" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font size="12.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Label fx:id="welcomeTag" layoutX="150.0" layoutY="449.0" opacity="0.72" prefHeight="37.0" prefWidth="177.0" text="Welcome Admin" textFill="WHITE">
+            </Label>
+            <Label layoutX="10.0" layoutY="72.0" prefHeight="19.0" prefWidth="212.0" text="of words for you to pratice with." textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="115.0" prefHeight="19.0" prefWidth="210.0" text="Isnt that exciting?" textFill="WHITE">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="145.0" prefHeight="19.0" prefWidth="210.0" text="Lets get started!" textFill="WHITE">
+               <font>
+                  <Font size="12.0" />
                </font>
             </Label>
          </children>
