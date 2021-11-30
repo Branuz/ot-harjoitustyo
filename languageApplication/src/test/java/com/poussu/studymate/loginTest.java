@@ -2,6 +2,8 @@ package com.poussu.studymate;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.poussu.studymate.startUI.Login;
+
 import org.junit.Before;
 import org.junit.Test;
 

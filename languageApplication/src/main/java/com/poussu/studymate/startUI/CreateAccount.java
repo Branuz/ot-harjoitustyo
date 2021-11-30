@@ -1,6 +1,10 @@
-package com.poussu.studymate;
+package com.poussu.studymate.startUI;
 
 import java.io.IOException;
+
+import com.poussu.studymate.DataBaseConnection;
+import com.poussu.studymate.Main;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -9,8 +13,6 @@ import javafx.scene.control.TextField;
 public class CreateAccount {
     private String style = "-fx-background-color: #34445e; ; -fx-text-fill: #FFFFFF";
     private String styleError = "-fx-border-color: red; -fx-background-color: #34445e; -fx-text-fill: #FFFFFF";
-    private String loggedUser;
-
     @FXML
     private TextField email;
     @FXML
@@ -36,56 +38,48 @@ public class CreateAccount {
         boolean passwordReCheck = checkIfEmptyPasswordField(passwordReEnter);
         
         //Connecting to db and changing to login view.
-        if(emailCheck && userNameCheck && passwordCheck && passwordReCheck && matchingPasswords){
+        if (emailCheck && userNameCheck && passwordCheck && passwordReCheck && matchingPasswords) {
 
             DataBaseConnection db = new DataBaseConnection();
             String input = "INSERT INTO Users(email, name, password) VALUES (?,?,?)";
             String[] values = {email.getText().toString(), userName.getText().toString(), password.getText().toString()};
-            loggedUser = userName.getText().toString();
             db.connect(input, "INSERT", values);
             m.changeScene("login-view.fxml");
         }
     }
 
     //Used to check for empty text fields
-    private boolean checkIfEmptyTextField(TextField text){
-        if(text.getText().isEmpty()){
+    private boolean checkIfEmptyTextField(TextField text) {
+        if (text.getText().isEmpty()) {
             text.setStyle(styleError);
             return false;
-        }else{
+        } else {
             text.setStyle(style);
             return true;
         }
     }
 
     //Used to check for empty password fields
-    private boolean checkIfEmptyPasswordField(PasswordField pw){
-        if(pw.getText().isEmpty()){
+    private boolean checkIfEmptyPasswordField(PasswordField pw) {
+        if (pw.getText().isEmpty()) {
             pw.setStyle(styleError);
             return false;
-        }else{
+        } else {
             pw.setStyle(style);
             return true;
         }
     }
 
     //Used to check for matching password inputs
-    private boolean checkIfMatchingPasswords(PasswordField pw, PasswordField pwRe){
-        if(pw.getText().equals(pwRe.getText())){
+    private boolean checkIfMatchingPasswords(PasswordField pw, PasswordField pwRe) {
+        if (pw.getText().equals(pwRe.getText())) {
             pwLabel1.setText("");
             pwLabel2.setText("");
             return true;
-        }else{
+        } else {
             pwLabel1.setText("Passwords don't match");
             pwLabel2.setText("Passwords don't match");
             return false;
         }
     }
-
-    public String getLoggedUser(){
-
-        return loggedUser;
-    }
-
-    
 }

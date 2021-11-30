@@ -1,7 +1,10 @@
-package com.poussu.studymate;
+package com.poussu.studymate.startUI;
 
 import java.io.IOException;
 import java.sql.*;
+
+import com.poussu.studymate.Main;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -15,30 +18,31 @@ public class Login {
     private TextField userName;
     @FXML
     private PasswordField password;
-
+    private static String loggedUser;
     @FXML
     private void onLoginButtonClick() throws IOException {
-        if(checkLoginDetails(userName.getText().toString(), password.getText().toString())){
+        if (checkLoginDetails(userName.getText().toString(), password.getText().toString())) {
+            loggedUser = userName.getText().toString();
             m.changeScene("main-menu.fxml");
-        }
-            else if(userName.getText().isEmpty() || password.getText().isEmpty()){
-                wrongLogin.setText("Username or password is empty");
+        
+        } else if (userName.getText().isEmpty() || password.getText().isEmpty()) {
+            wrongLogin.setText("Username or password is empty");
 
-            } else if(!userName.getText().toString().equals("Admin") || !password.getText().equals("1234")) {
-                wrongLogin.setText("Wrong username or password");
-            }
+        } else if (!userName.getText().toString().equals("Admin") || !password.getText().equals("1234")) {
+            wrongLogin.setText("Wrong username or password");
+        }
     }
 
     //Confirms that the login information matches database.
-    public boolean checkLoginDetails(String username, String pw){
+    public boolean checkLoginDetails(String username, String pw) {
         try {
             Connection db = DriverManager.getConnection("jdbc:sqlite:studyMate.db");
             Statement s = db.createStatement();
-            ResultSet r = s.executeQuery("SELECT * FROM Users WHERE name='"+username+"'"+" AND password='"+pw+"'"+
-           " OR email='"+username+"'"+ " AND password='"+pw+"'");
+            ResultSet r = s.executeQuery("SELECT * FROM Users WHERE name='" + username + "'" + " AND password='" + pw + "'" 
+                + " OR email='" + username + "'" + " AND password='" + pw + "'");
             if (r.next()) {
                 return true;
-            }else {
+            } else {
                 return false;
             }
         } catch (Exception e) {
@@ -49,5 +53,9 @@ public class Login {
     @FXML
     private void onCreateAccountButtonClick() throws IOException {
         m.changeScene("newUser-menu.fxml");
+    }
+
+    public String getLoggedUser() {
+        return loggedUser;
     }
 }

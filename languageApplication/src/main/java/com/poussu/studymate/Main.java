@@ -15,13 +15,13 @@ public class Main extends Application {
         stg = stage;
         stage.setResizable(false);
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 450, 620);
+        Scene scene = new Scene(fxmlLoader.load(), 430, 620);
         stage.setScene(scene);
         stage.show();
     }
 
     //Changes to a new GUI view
-    public void changeScene(String fxml) throws IOException{
+    public void changeScene(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
         stg.getScene().setRoot(pane);
     }
@@ -30,7 +30,9 @@ public class Main extends Application {
         //Prepares the sqlite database before launch
         DataBaseConnection db = new DataBaseConnection();
         String setup = "CREATE TABLE Users (id INTEGER PRIMARY KEY, email TEXT, name TEXT, password TEXT)";
+        String listSetup = "CREATE TABLE List (id INTEGER PRIMARY KEY, word TEXT, translation TEXT, user TEXT)";
         db.connect(setup, "CREATE", new String[0]);
+        db.connect(listSetup, "CREATE", new String[0]);
         launch();
     }
 }

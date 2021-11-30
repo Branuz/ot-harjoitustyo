@@ -3,15 +3,17 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="430.0" style="-fx-background-color: #34445e;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poussu.studymate.dictionaryUI.DictionaryMenu">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="430.0" style="-fx-background-color: #34445e;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poussu.studymate.dictionaryUI.DictionaryAddWord">
    <top>
       <BorderPane prefHeight="120.0" prefWidth="429.0" style="-fx-background-color: #2e3c51;" BorderPane.alignment="CENTER">
          <center>
@@ -67,41 +69,10 @@
          </center>
       </BorderPane>
    </top>
-   <center>
+   <bottom>
       <AnchorPane prefHeight="502.0" prefWidth="416.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="myListView" editable="true" layoutX="209.0" layoutY="75.0" prefHeight="347.0" prefWidth="214.0" />
-            <TextField layoutX="209.0" layoutY="7.0" prefHeight="38.0" prefWidth="215.0" promptText="Search">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-            <Label layoutX="11.0" layoutY="-2.0" prefHeight="57.0" prefWidth="198.0" text="Welcome to dictionary!" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="11.0" layoutY="53.0" prefHeight="19.0" prefWidth="185.0" text="In here you can add new lists" textFill="WHITE">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="wordList" layoutX="10.0" layoutY="72.0" prefHeight="19.0" prefWidth="212.0" text="of words for you to pratice with." textFill="WHITE">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="11.0" layoutY="115.0" prefHeight="19.0" prefWidth="210.0" text="Isnt that exciting?" textFill="WHITE">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="11.0" layoutY="145.0" prefHeight="19.0" prefWidth="210.0" text="Lets get started!" textFill="WHITE">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Label>
-            <Button layoutX="10.0" layoutY="309.0" mnemonicParsing="false" onAction="#newList" prefHeight="32.0" prefWidth="151.0" style="-fx-background-color: #37c6cc;" text="Create new list" textFill="WHITE">
+            <Button layoutX="57.0" layoutY="375.0" mnemonicParsing="false" onAction="#addWord" prefHeight="32.0" prefWidth="133.0" style="-fx-background-color: #37c6cc;" text="Add" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -118,7 +89,43 @@
                   </AnchorPane>
                </left>
             </BorderPane>
+            <TableView fx:id="table" layoutX="56.0" layoutY="14.0" prefHeight="294.0" prefWidth="302.0">
+              <columns>
+                <TableColumn fx:id="words" prefWidth="151.0" text="Words" />
+                <TableColumn fx:id="translations" prefWidth="150.0" text="Translations" />
+              </columns>
+            </TableView>
+            <TextField fx:id="wordField" layoutX="68.0" layoutY="324.0" prefHeight="33.0" prefWidth="132.0" promptText="Word" style="-fx-background-color: #34445e; -fx-text-fill: #FFFFFF;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Line endX="70.0" endY="10.0" layoutX="122.0" layoutY="357.0" startX="-67.0" startY="10.0" stroke="#949cb1" />
+            <TextField fx:id="translationField" layoutX="230.0" layoutY="324.0" prefHeight="33.0" prefWidth="132.0" promptText="Translation" style="-fx-background-color: #34445e; -fx-text-fill: #FFFFFF;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Line endX="225.0" layoutX="132.0" layoutY="367.0" startX="79.0" stroke="#949cb1" />
+            <Button layoutX="211.0" layoutY="375.0" mnemonicParsing="false" onAction="#doneButton" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: #37cc98;" text="Done" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="31.0" fitWidth="26.0" layoutX="42.0" layoutY="331.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bookIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="26.0" layoutX="198.0" layoutY="331.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/translateIcon.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-   </center>
+   </bottom>
 </BorderPane>
