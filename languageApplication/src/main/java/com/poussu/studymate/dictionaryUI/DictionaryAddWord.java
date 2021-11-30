@@ -29,7 +29,7 @@ public class DictionaryAddWord  implements Initializable {
     @FXML
     private TableColumn<Word, String> translations;
 
-    ObservableList<Word> listItems = FXCollections.observableArrayList();
+    private ObservableList<Word> listItems = FXCollections.observableArrayList();
 
     private Main m = new Main();
     private Login l = new Login();
@@ -66,5 +66,9 @@ public class DictionaryAddWord  implements Initializable {
         translations.setCellValueFactory(new PropertyValueFactory<Word, String>("translation"));
         table.setItems(listItems);
 
+    }
+
+    public ObservableList<Word> getListItems(){
+        return listItems;
     }
 }

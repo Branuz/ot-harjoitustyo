@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import com.poussu.studymate.Main;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ContextMenu;
@@ -16,7 +14,6 @@ import javafx.beans.binding.Bindings;
 
 public class DictionaryMenu implements Initializable{
 
-    ObservableList<String> listItems = FXCollections.observableArrayList();
     private Main m = new Main();
     String[] testValues = {"These are test lists", " db adding function", "under construction"};
 

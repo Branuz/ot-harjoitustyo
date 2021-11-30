@@ -70,7 +70,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.poussu.studymate/com.poussu.studymate.Main</mainClass>
+                            <mainClass>com/poussu/studymate/dictionaryUI/*</mainClass>
                         </configuration>
                     </execution>
                 </executions>
@@ -79,6 +79,12 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.3</version>
+                <configuration>
+                    <excludes>
+                        <exclude>com/poussu/**/DictionaryAddWord.java</exclude>
+                        <exclude>com.poussu.studymate.dictionaryUI.DictionaryMenujava</exclude>
+                    </excludes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>default-prepare-agent</id>
