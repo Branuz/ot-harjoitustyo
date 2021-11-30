@@ -5,6 +5,8 @@
 
 [Alustava määrittelydokumentti](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/specificationOfRequirements.md)
 
+[Arkkitehtuuri](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/Architecture.md)
+
 <h2>Ohjeet</h2>
 
 Ohjelman saa suoritettua hakemistossa languageApplication komennolla: mvn compile exec:java -Dexec.mainClass=com.poussu.studymate.Main
