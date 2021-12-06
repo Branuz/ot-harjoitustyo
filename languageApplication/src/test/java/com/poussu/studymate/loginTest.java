@@ -8,9 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class loginTest {
-    static Login login;
-    static DataBaseConnection db;
+//public class loginTest {
+   /* static Login login;
 
     @Before
     public void setUp(){
@@ -33,3 +32,4 @@ public class loginTest {
         assertFalse(login.checkLoginDetails("Markka", "23123"));
     }
 }
+*/

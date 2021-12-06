@@ -1,9 +1,10 @@
 package com.poussu.studymate;
 import static org.junit.Assert.assertEquals;
-import com.poussu.studymate.dictionaryUI.Word;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import dictionary.Word;
 
 public class wordTest {
    private Word w;

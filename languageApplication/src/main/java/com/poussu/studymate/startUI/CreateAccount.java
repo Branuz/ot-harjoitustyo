@@ -1,10 +1,11 @@
 package com.poussu.studymate.startUI;
 
 import java.io.IOException;
-
-import com.poussu.studymate.DataBaseConnection;
+import java.sql.Connection;
 import com.poussu.studymate.Main;
 
+import dataBaseHandler.ConnectionManager;
+import dataBaseHandler.DatabaseInsert;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -39,12 +40,20 @@ public class CreateAccount {
         
         //Connecting to db and changing to login view.
         if (emailCheck && userNameCheck && passwordCheck && passwordReCheck && matchingPasswords) {
+            Connection conn = null;
+            DatabaseInsert db = new DatabaseInsert();
+            try {
+                conn = ConnectionManager.getConnection();
+                String input = "INSERT INTO Users(email, name, password) VALUES (?,?,?)";
+                String[] values = {email.getText().toString(), userName.getText().toString(), password.getText().toString()};
+                db.databaseInsert(conn, input, values);
+                m.changeScene("login-view.fxml");
+                
 
-            DataBaseConnection db = new DataBaseConnection();
-            String input = "INSERT INTO Users(email, name, password) VALUES (?,?,?)";
-            String[] values = {email.getText().toString(), userName.getText().toString(), password.getText().toString()};
-            db.connect(input, "INSERT", values);
-            m.changeScene("login-view.fxml");
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
     }
 

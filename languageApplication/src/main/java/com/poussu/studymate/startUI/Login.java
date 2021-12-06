@@ -2,13 +2,14 @@ package com.poussu.studymate.startUI;
 
 import java.io.IOException;
 import java.sql.*;
-
 import com.poussu.studymate.Main;
 
+import dataBaseHandler.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import userData.User;
 
 public class Login {
     private Main m = new Main();
@@ -18,34 +19,31 @@ public class Login {
     private TextField userName;
     @FXML
     private PasswordField password;
-    private static String loggedUser;
+
+    private static User loggedUser;
     @FXML
-    private void onLoginButtonClick() throws IOException {
+    private void onLoginButtonClick() throws Exception {
+        
+        if (userName.getText().isEmpty() || password.getText().isEmpty()) {
+            wrongLogin.setText("Username or password is empty");
+        } 
+
         if (checkLoginDetails(userName.getText().toString(), password.getText().toString())) {
-            loggedUser = userName.getText().toString();
             m.changeScene("main-menu.fxml");
         
-        } else if (userName.getText().isEmpty() || password.getText().isEmpty()) {
-            wrongLogin.setText("Username or password is empty");
-
-        } else if (!userName.getText().toString().equals("Admin") || !password.getText().equals("1234")) {
+        }else {
             wrongLogin.setText("Wrong username or password");
         }
     }
 
     //Confirms that the login information matches database.
-    public boolean checkLoginDetails(String username, String pw) {
-        try {
-            Connection db = DriverManager.getConnection("jdbc:sqlite:studyMate.db");
-            Statement s = db.createStatement();
-            ResultSet r = s.executeQuery("SELECT * FROM Users WHERE name='" + username + "'" + " AND password='" + pw + "'" 
-                + " OR email='" + username + "'" + " AND password='" + pw + "'");
-            if (r.next()) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (Exception e) {
+    public boolean checkLoginDetails(String username, String pw) throws SQLException {
+        UserManager manager = new UserManager();
+        User user = manager.getLoggedUser(username, pw);
+        if(user.getName()!=null && user.getPassword()!=null){
+            loggedUser = user;
+            return true;
+        }else{
             return false;
         }
     }
@@ -55,7 +53,7 @@ public class Login {
         m.changeScene("newUser-menu.fxml");
     }
 
-    public String getLoggedUser() {
+    public User getLoggedUser() {
         return loggedUser;
     }
 }

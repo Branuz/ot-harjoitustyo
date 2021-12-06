@@ -1,4 +1,4 @@
-package com.poussu.studymate.dictionaryUI;
+package dictionary;
 
 public class Word {
     private String word;

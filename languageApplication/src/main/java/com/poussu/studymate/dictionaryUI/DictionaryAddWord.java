@@ -2,12 +2,15 @@ package com.poussu.studymate.dictionaryUI;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
-
-import com.poussu.studymate.DataBaseConnection;
 import com.poussu.studymate.Main;
 import com.poussu.studymate.startUI.Login;
 
+import dataBaseHandler.ConnectionManager;
+import dataBaseHandler.DatabaseInsert;
+import dictionary.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -55,17 +58,28 @@ public class DictionaryAddWord  implements Initializable {
     }
 
     @FXML
-    private void addWord() {
-     /*   DataBaseConnection db = new DataBaseConnection();
-        String input = "INSERT INTO List(word, translation, user) VALUES (?,?,?)";
-        String[] values = {wordField.getText().toString(), translationField.getText().toString(), l.getLoggedUser()};
-        db.connect(input, "INSERT", values);*/
+    private void addWord() throws SQLException {
+        Connection conn = null;
+
+        try {
+        conn = ConnectionManager.getConnection();
+
+        DatabaseInsert manager = new DatabaseInsert();
+        
+        String[] values = {wordField.getText().toString(), translationField.getText().toString(), l.getLoggedUser().getName()};
+        String statement = "INSERT INTO List(word, translation, user) VALUES (?,?,?)";
+        manager.databaseInsert(conn, statement, values);
 
         listItems.add(new Word(wordField.getText().toString(), translationField.getText().toString()));
         words.setCellValueFactory(new PropertyValueFactory<Word, String>("word"));
         translations.setCellValueFactory(new PropertyValueFactory<Word, String>("translation"));
         table.setItems(listItems);
 
+
+    } catch (Exception e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
     }
 
     public ObservableList<Word> getListItems(){

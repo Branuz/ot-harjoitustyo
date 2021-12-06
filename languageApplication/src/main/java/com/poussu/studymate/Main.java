@@ -6,9 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.sql.Connection;
+
+import dataBaseHandler.ConnectionManager;
+import dataBaseHandler.DatabaseInsert;
 
 public class Main extends Application {
     private static Stage stg;
+    public static Connection conn = null;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -26,13 +31,14 @@ public class Main extends Application {
         stg.getScene().setRoot(pane);
     }
 
-    public static void main(String[] args) {
-        //Prepares the sqlite database before launch
-        DataBaseConnection db = new DataBaseConnection();
-        String setup = "CREATE TABLE Users (id INTEGER PRIMARY KEY, email TEXT, name TEXT, password TEXT)";
-        String listSetup = "CREATE TABLE List (id INTEGER PRIMARY KEY, word TEXT, translation TEXT, user TEXT)";
-        db.connect(setup, "CREATE", new String[0]);
-        db.connect(listSetup, "CREATE", new String[0]);
+    public static void main(String[] args) throws Exception {
+        conn = ConnectionManager.getConnection();
+       // Prepares the sqlite database before launch
+        DatabaseInsert db = new DatabaseInsert();
+        String setup = "CREATE TABLE Users (id INTEGER PRIMARY KEY, email TEXT, name TEXT, password TEXT);";
+        String listSetup = "CREATE TABLE List (id INTEGER PRIMARY KEY, word TEXT, translation TEXT, user TEXT);";
+        db.databaseCreate(conn, setup);
+        db.databaseCreate(conn, listSetup);
         launch();
     }
 }
