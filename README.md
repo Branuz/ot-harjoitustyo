@@ -1,11 +1,13 @@
 <h1> Ohjelmistotekniikka, harjoitustyö </h1> 
 
+Harjoitustyön aiheena on kielen opiskelu ohjelma johon pystyy lisäämään ja harjoittelemaan erillaisten uusien sanojen ja lauseiden kirjoittamista ja muistamista.
 
 [Työaikakirjanpito](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/tuntikirjanpito.md)
 
 [Alustava määrittelydokumentti](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/specificationOfRequirements.md)
 
 [Arkkitehtuuri](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/Architecture.md)
+
 
 <h2>Ohjeet</h2>
 

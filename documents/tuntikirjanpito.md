@@ -7,4 +7,6 @@
 | 23.11 | 7    | Lisäsin create user GUI:n sekä lisäsin tietokanta yhteyden sqliteen  |
 | 29.11 | 6    | Loin menu GUI:n sekä Dictionary GUI:N pohjan  |
 | 30.11 | 6    | Lisäsin listojen ja sanojen lisäykset dictionaryy sekä niidet GUI:t. Sekä aloin valmistelemaan tietokanta yhteyttä.  |
-| yht   | 30   | | 
+| 6.12 | 7    | Koodi faktorointia ja sain dictionaryn läheskokonaan toiminta kuntoon  |
+| 7.12 | 9    | Aloin rakentmaan wordgame funktiota ja taistelin bugien kanssa että saisin toimivan version valmiiksi  |
+| yht   | 46   | | 
