@@ -81,8 +81,7 @@
                 <version>0.8.3</version>
                 <configuration>
                     <excludes>
-                        <exclude>com/poussu/**/DictionaryAddWord.java</exclude>
-                        <exclude>com.poussu.studymate.dictionaryUI.DictionaryMenujava</exclude>
+                        <exclude>**/userInterface/**/*.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>

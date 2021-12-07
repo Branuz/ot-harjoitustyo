@@ -6,6 +6,10 @@
 
 <suppressions>
     <suppress files="src.main.java.module-info.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="src.main.java.com.poussu.studymate.dictionaryUI.DictionaryMenu.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="src.main.java.com.poussu.studymate.dictionaryUI.DictionaryAddWord.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="src.main.java.com.poussu.studymate.userInterface.dictionaryUI.DictionaryAddWord.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="src.main.java.com.poussu.studymate.userInterface.dictionaryUI.DictionaryMenu.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="src.main.java.com.poussu.studymate.userInterface.startUI.CreateAccount.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="src.main.java.com.poussu.studymate.userInterface.startUI.Login.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="src.main.java.com.poussu.studymate.userInterface.startUI.Menu.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="src.main.java.com.poussu.studymate.userInterface.wordGameUI.WordGameMenu.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>
