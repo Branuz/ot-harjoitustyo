@@ -6,21 +6,20 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import com.poussu.studymate.Main;
+import com.poussu.studymate.dataBaseHandler.ConnectionManager;
+import com.poussu.studymate.dataBaseHandler.DatabaseInsert;
+import com.poussu.studymate.dictionary.Word;
 import com.poussu.studymate.startUI.Login;
 
-import dataBaseHandler.ConnectionManager;
-import dataBaseHandler.DatabaseInsert;
-import dictionary.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class DictionaryAddWord  implements Initializable {
+public class DictionaryAddWord extends DictionaryMenu {
     @FXML
     private TextField wordField;
     @FXML
@@ -65,9 +64,9 @@ public class DictionaryAddWord  implements Initializable {
         conn = ConnectionManager.getConnection();
 
         DatabaseInsert manager = new DatabaseInsert();
-        
-        String[] values = {wordField.getText().toString(), translationField.getText().toString(), l.getLoggedUser().getName()};
-        String statement = "INSERT INTO List(word, translation, user) VALUES (?,?,?)";
+        String[] values = {wordField.getText().toString(), translationField.getText().toString(), l.getLoggedUser().getName(), getWlist().getName()};
+        String statement = "INSERT INTO List(word, translation, user, name) VALUES (?,?,?,?)";
+        getWlist().getList().add(new Word(wordField.getText().toString(), translationField.getText().toString()));
         manager.databaseInsert(conn, statement, values);
 
         listItems.add(new Word(wordField.getText().toString(), translationField.getText().toString()));

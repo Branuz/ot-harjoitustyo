@@ -3,13 +3,13 @@ package com.poussu.studymate.startUI;
 import java.io.IOException;
 import java.sql.*;
 import com.poussu.studymate.Main;
+import com.poussu.studymate.dataBaseHandler.UserManager;
+import com.poussu.studymate.userData.User;
 
-import dataBaseHandler.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import userData.User;
 
 public class Login {
     private Main m = new Main();

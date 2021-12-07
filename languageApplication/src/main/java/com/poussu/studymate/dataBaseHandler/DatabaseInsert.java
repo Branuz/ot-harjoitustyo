@@ -1,4 +1,4 @@
-package dataBaseHandler;
+package com.poussu.studymate.dataBaseHandler;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

@@ -2,32 +2,45 @@ package com.poussu.studymate.dictionaryUI;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import com.poussu.studymate.Main;
+import com.poussu.studymate.dictionary.EveryList;
+import com.poussu.studymate.dictionary.WordList;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.beans.binding.Bindings;
 
 public class DictionaryMenu implements Initializable{
 
     private Main m = new Main();
-    String[] testValues = {"These are test lists", " db adding function", "under construction"};
+    private static WordList wlist;
 
     @FXML
     private ListView<String> myListView;
+    @FXML
+    private TextField listName;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        myListView.getItems().addAll(testValues);
+        ArrayList<WordList> everyL = new EveryList().getWordLists();
+        if(everyL.size()>0) {
+            for(WordList w : everyL){
+                myListView.getItems().add(w.getName());
+            }
         cellEditorSettings();
-
+        }
     }
+
     @FXML
     private void newList() throws IOException{
+        wlist = new WordList(listName.getText().toString());
         m.changeScene("dictionary-addNewMenu.fxml");
     }
     
@@ -72,6 +85,10 @@ public class DictionaryMenu implements Initializable{
             });
             return cell ;
         });
+    }
+
+    public WordList getWlist() {
+        return wlist;
     }
 
 }

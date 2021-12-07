@@ -1,4 +1,4 @@
-package dictionary;
+package com.poussu.studymate.dictionary;
 
 import java.util.ArrayList;
 

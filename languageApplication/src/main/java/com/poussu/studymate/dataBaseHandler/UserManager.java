@@ -1,4 +1,4 @@
-package dataBaseHandler;
+package com.poussu.studymate.dataBaseHandler;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import userData.User;
+import com.poussu.studymate.userData.User;
 
 public class UserManager {
     public User getLoggedUser(String name, String password) throws SQLException{

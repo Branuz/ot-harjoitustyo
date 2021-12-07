@@ -119,7 +119,7 @@
                   </AnchorPane>
                </left>
             </BorderPane>
-            <TextField layoutX="53.0" layoutY="262.0" prefHeight="24.0" prefWidth="115.0" promptText="List name" style="-fx-background-color: #34445e; -fx-text-fill: #FFFFFF;">
+            <TextField fx:id="listName" layoutX="53.0" layoutY="262.0" prefHeight="24.0" prefWidth="115.0" promptText="List name" style="-fx-background-color: #34445e; -fx-text-fill: #FFFFFF;">
                <font>
                   <Font size="14.0" />
                </font></TextField>

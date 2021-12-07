@@ -3,9 +3,9 @@ package com.poussu.studymate.startUI;
 import java.io.IOException;
 import java.sql.Connection;
 import com.poussu.studymate.Main;
+import com.poussu.studymate.dataBaseHandler.ConnectionManager;
+import com.poussu.studymate.dataBaseHandler.DatabaseInsert;
 
-import dataBaseHandler.ConnectionManager;
-import dataBaseHandler.DatabaseInsert;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;

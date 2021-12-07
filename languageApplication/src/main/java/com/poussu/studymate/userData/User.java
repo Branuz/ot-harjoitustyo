@@ -1,4 +1,4 @@
-package userData;
+package com.poussu.studymate.userData;
 
 public class User {
     private String name;
