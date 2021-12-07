@@ -22,14 +22,13 @@ public class DatabaseUpdater {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
-            if(p != null){
-                 try{
-                      p.close();
-                 } catch(Exception e){
-                     e.printStackTrace();
-                 }
+        } finally {
+            if (p != null) {
+                try {
+                    p.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
         
@@ -37,22 +36,21 @@ public class DatabaseUpdater {
 
     //Used for creating new tables in the database
     public void databaseCreate(Connection conn, String statement) {
-            Statement s  = null;
+        Statement s  = null;
 
         try {
-           s = conn.createStatement();
-           s.execute(statement);    
+            s = conn.createStatement();
+            s.execute(statement);    
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
-            if(s != null){
-                 try{
-                      s.close();
-                 } catch(Exception e){
-                     e.printStackTrace();
-                 }
+        } finally {
+            if (s != null) {
+                try {
+                    s.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
