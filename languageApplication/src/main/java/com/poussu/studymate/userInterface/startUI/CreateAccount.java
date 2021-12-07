@@ -48,7 +48,7 @@ public class CreateAccount {
                 String[] values = {email.getText().toString(), userName.getText().toString(), password.getText().toString()};
                 db.databaseInsert(conn, input, values);
                 m.changeScene("login-view.fxml");
-                
+                conn.close();
 
             } catch (Exception e) {
                 // TODO Auto-generated catch block

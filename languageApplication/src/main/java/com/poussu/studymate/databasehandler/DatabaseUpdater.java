@@ -9,8 +9,9 @@ public class DatabaseUpdater {
 
     //Does update executions such as deletions and insertions of lists and words.
     public void databaseInsert(Connection conn, String statement, String[] userPara) {
+        PreparedStatement p = null;
         try {
-            PreparedStatement p = conn.prepareStatement(statement);
+            p = conn.prepareStatement(statement);
 
             for (int i = 0; i < userPara.length; i++) {
                 p.setString(i + 1, userPara[i]);
@@ -22,19 +23,37 @@ public class DatabaseUpdater {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        finally {
+            if(p != null){
+                 try{
+                      p.close();
+                 } catch(Exception e){
+                     e.printStackTrace();
+                 }
+            }
+        }
         
     }
 
     //Used for creating new tables in the database
     public void databaseCreate(Connection conn, String statement) {
+            Statement s  = null;
+
         try {
-            Statement s = conn.createStatement();
-            s.execute(statement);    
-            conn.close();
+           s = conn.createStatement();
+           s.execute(statement);    
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
+        finally {
+            if(s != null){
+                 try{
+                      s.close();
+                 } catch(Exception e){
+                     e.printStackTrace();
+                 }
+            }
+        }
     }
 }
