@@ -3,7 +3,7 @@ package com.poussu.studymate.dataBaseHandler;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-
+//Creates a connection between the application and database.
 public class ConnectionManager {
 
     private static String url = "jdbc:sqlite:studyMate.db";

@@ -5,9 +5,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public class DatabaseInsert {
+public class DatabaseUpdater {
 
-    //Adds the word into the database
+    //Does update executions such as deletions and insertions of lists and words.
     public void databaseInsert(Connection conn, String statement ,String[] userPara){
         try {
            PreparedStatement p = conn.prepareStatement(statement);
@@ -20,12 +20,12 @@ public class DatabaseInsert {
             p.close();
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
     }
 
+    //Used for creating new tables in the database
     public void databaseCreate(Connection conn, String statement){
         try {
            Statement s = conn.createStatement();
@@ -33,7 +33,6 @@ public class DatabaseInsert {
             conn.close();
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         

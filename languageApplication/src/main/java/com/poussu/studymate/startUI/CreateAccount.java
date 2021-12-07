@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import com.poussu.studymate.Main;
 import com.poussu.studymate.dataBaseHandler.ConnectionManager;
-import com.poussu.studymate.dataBaseHandler.DatabaseInsert;
+import com.poussu.studymate.dataBaseHandler.DatabaseUpdater;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -41,7 +41,7 @@ public class CreateAccount {
         //Connecting to db and changing to login view.
         if (emailCheck && userNameCheck && passwordCheck && passwordReCheck && matchingPasswords) {
             Connection conn = null;
-            DatabaseInsert db = new DatabaseInsert();
+            DatabaseUpdater db = new DatabaseUpdater();
             try {
                 conn = ConnectionManager.getConnection();
                 String input = "INSERT INTO Users(email, name, password) VALUES (?,?,?)";

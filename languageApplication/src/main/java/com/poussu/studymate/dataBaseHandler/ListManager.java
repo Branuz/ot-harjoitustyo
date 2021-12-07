@@ -9,6 +9,8 @@ import com.poussu.studymate.dictionary.Word;
 import com.poussu.studymate.dictionary.WordList;
 
 public class ListManager {
+
+    //Fetches all the words from the database and makes corresponding lists of them based on their names.
     public ArrayList<WordList> getSavedLists(Connection conn, String user) throws SQLException{
         
         try {
@@ -29,6 +31,8 @@ public class ListManager {
 
             conn.close();
             rs.close();
+
+            //Returns a list which contains all the wordlists created.
             return lists;
             
         } catch (Exception e) {
@@ -36,5 +40,13 @@ public class ListManager {
             System.out.println(e);
             }
         return null;
+        }
+
+        public void removeList(Connection conn){
+            try {
+                
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
         }
 }

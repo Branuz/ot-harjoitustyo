@@ -5,6 +5,7 @@ public class User {
     private String password;
     private String email;
 
+    // User object that contains the users informations.
     public User (String name, String password, String email) {
         this.name = name;
         this.password = password;

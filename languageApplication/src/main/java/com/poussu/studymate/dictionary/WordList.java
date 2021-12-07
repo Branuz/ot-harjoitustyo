@@ -6,6 +6,7 @@ public class WordList {
     private String name;
     private ArrayList<Word> list;
 
+    //A list that contains all the words attached to it.
     public WordList(String name){
         this.name = name;
         list = new ArrayList<>();

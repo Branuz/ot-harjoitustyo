@@ -9,6 +9,8 @@ import java.sql.Statement;
 import com.poussu.studymate.userData.User;
 
 public class UserManager {
+
+    //Used for adding a new user in the database.
     public User getLoggedUser(String name, String password) throws SQLException{
                 
         Connection conn = null;

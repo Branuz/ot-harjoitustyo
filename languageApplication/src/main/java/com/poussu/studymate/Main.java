@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.sql.Connection;
 
 import com.poussu.studymate.dataBaseHandler.ConnectionManager;
-import com.poussu.studymate.dataBaseHandler.DatabaseInsert;
+import com.poussu.studymate.dataBaseHandler.DatabaseUpdater;
 
 public class Main extends Application {
     private static Stage stg;
@@ -34,7 +34,7 @@ public class Main extends Application {
     public static void main(String[] args) throws Exception {
         conn = ConnectionManager.getConnection();
        // Prepares the sqlite database before launch
-        DatabaseInsert db = new DatabaseInsert();
+        DatabaseUpdater db = new DatabaseUpdater();
         String setup = "CREATE TABLE Users (id INTEGER PRIMARY KEY, email TEXT, name TEXT, password TEXT);";
         String listSetup = "CREATE TABLE List (id INTEGER PRIMARY KEY, word TEXT, translation TEXT, user TEXT, name TEXT);";
         db.databaseCreate(conn, setup);

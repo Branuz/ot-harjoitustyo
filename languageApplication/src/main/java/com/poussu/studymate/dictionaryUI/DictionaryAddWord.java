@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import com.poussu.studymate.Main;
 import com.poussu.studymate.dataBaseHandler.ConnectionManager;
-import com.poussu.studymate.dataBaseHandler.DatabaseInsert;
+import com.poussu.studymate.dataBaseHandler.DatabaseUpdater;
 import com.poussu.studymate.dictionary.Word;
 import com.poussu.studymate.startUI.Login;
 
@@ -63,7 +63,7 @@ public class DictionaryAddWord extends DictionaryMenu {
         try {
         conn = ConnectionManager.getConnection();
 
-        DatabaseInsert manager = new DatabaseInsert();
+        DatabaseUpdater manager = new DatabaseUpdater();
         String[] values = {wordField.getText().toString(), translationField.getText().toString(), l.getLoggedUser().getName(), getWlist().getName()};
         String statement = "INSERT INTO List(word, translation, user, name) VALUES (?,?,?,?)";
         getWlist().getList().add(new Word(wordField.getText().toString(), translationField.getText().toString()));

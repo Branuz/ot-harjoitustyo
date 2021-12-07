@@ -2,15 +2,19 @@ package com.poussu.studymate.dictionaryUI;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import com.poussu.studymate.Main;
+import com.poussu.studymate.dataBaseHandler.ConnectionManager;
+import com.poussu.studymate.dataBaseHandler.DatabaseUpdater;
 import com.poussu.studymate.dictionary.EveryList;
 import com.poussu.studymate.dictionary.WordList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
@@ -26,6 +30,7 @@ public class DictionaryMenu implements Initializable{
     private ListView<String> myListView;
     @FXML
     private TextField listName;
+    @FXML Label errorLabel;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -40,8 +45,12 @@ public class DictionaryMenu implements Initializable{
 
     @FXML
     private void newList() throws IOException{
-        wlist = new WordList(listName.getText().toString());
-        m.changeScene("dictionary-addNewMenu.fxml");
+        if(listName.getText().toString().isEmpty()){
+            errorLabel.setText("List name is empty!");
+        }else {
+            wlist = new WordList(listName.getText().toString());
+            m.changeScene("dictionary-addNewMenu.fxml");
+        }
     }
     
     
@@ -72,7 +81,21 @@ public class DictionaryMenu implements Initializable{
 
             MenuItem deleteItem = new MenuItem();
             deleteItem.textProperty().bind(Bindings.format("Delete \"%s\"", cell.itemProperty()));
-            deleteItem.setOnAction(event -> myListView.getItems().remove(cell.getItem()));
+            deleteItem.setOnAction(event -> {
+                Connection conn;
+                try {
+                    conn = ConnectionManager.getConnection();
+                    DatabaseUpdater db = new DatabaseUpdater();
+                    String statement = "DELETE FROM List WHERE name = ?";
+                    String[] userPara= {cell.getItem().toString()};
+
+                    db.databaseInsert(conn, statement, userPara);
+                    myListView.getItems().remove(cell.getItem());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            });
+            
             contextMenu.getItems().addAll(editItem, deleteItem);
 
             cell.textProperty().bind(cell.itemProperty());
