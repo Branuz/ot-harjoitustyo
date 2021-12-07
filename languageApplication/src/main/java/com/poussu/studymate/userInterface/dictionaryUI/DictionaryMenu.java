@@ -1,4 +1,4 @@
-package com.poussu.studymate.dictionaryUI;
+package com.poussu.studymate.userInterface.dictionaryUI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.beans.binding.Bindings;
 
@@ -34,6 +35,7 @@ public class DictionaryMenu implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+      //  myListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         ArrayList<WordList> everyL = new EveryList().getWordLists();
         if(everyL.size()>0) {
             for(WordList w : everyL){

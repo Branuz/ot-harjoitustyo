@@ -1,4 +1,4 @@
-package com.poussu.studymate.dictionaryUI;
+package com.poussu.studymate.userInterface.dictionaryUI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -9,7 +9,7 @@ import com.poussu.studymate.Main;
 import com.poussu.studymate.dataBaseHandler.ConnectionManager;
 import com.poussu.studymate.dataBaseHandler.DatabaseUpdater;
 import com.poussu.studymate.dictionary.Word;
-import com.poussu.studymate.startUI.Login;
+import com.poussu.studymate.userInterface.startUI.Login;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,6 +28,7 @@ public class DictionaryAddWord extends DictionaryMenu {
     private TableView<Word> table;
     @FXML
     private TableColumn<Word, String> words;
+    
     @FXML
     private TableColumn<Word, String> translations;
 
@@ -68,7 +69,6 @@ public class DictionaryAddWord extends DictionaryMenu {
         String statement = "INSERT INTO List(word, translation, user, name) VALUES (?,?,?,?)";
         getWlist().getList().add(new Word(wordField.getText().toString(), translationField.getText().toString()));
         manager.databaseInsert(conn, statement, values);
-
         listItems.add(new Word(wordField.getText().toString(), translationField.getText().toString()));
         words.setCellValueFactory(new PropertyValueFactory<Word, String>("word"));
         translations.setCellValueFactory(new PropertyValueFactory<Word, String>("translation"));

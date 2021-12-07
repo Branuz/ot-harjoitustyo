@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import com.poussu.studymate.dataBaseHandler.ConnectionManager;
 import com.poussu.studymate.dataBaseHandler.ListManager;
-import com.poussu.studymate.startUI.Login;
+import com.poussu.studymate.userInterface.startUI.Login;
 
 public class EveryList {
     private Login l = new Login();

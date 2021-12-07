@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="430.0" style="-fx-background-color: #34445e;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poussu.studymate.dictionaryUI.DictionaryAddWord">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="430.0" style="-fx-background-color: #34445e;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poussu.studymate.userInterface.dictionaryUI.DictionaryAddWord">
    <top>
       <BorderPane prefHeight="120.0" prefWidth="429.0" style="-fx-background-color: #2e3c51;" BorderPane.alignment="CENTER">
          <center>

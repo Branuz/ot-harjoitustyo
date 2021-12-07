@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="430.0" style="-fx-background-color: #34445e;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poussu.studymate.startUI.Menu">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="430.0" style="-fx-background-color: #34445e;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poussu.studymate.userInterface.startUI.Menu">
    <top>
       <BorderPane prefHeight="120.0" prefWidth="429.0" style="-fx-background-color: #2e3c51;" BorderPane.alignment="CENTER">
          <center>
@@ -76,7 +76,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="68.0" layoutY="325.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Word Game" textFill="WHITE">
+            <Button layoutX="68.0" layoutY="325.0" mnemonicParsing="false" onAction="#wordGameButton" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Word Game" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>

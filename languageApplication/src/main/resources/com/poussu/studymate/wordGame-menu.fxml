@@ -4,15 +4,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="430.0" style="-fx-background-color: #34445e;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poussu.studymate.userInterface.dictionaryUI.DictionaryMenu">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="430.0" style="-fx-background-color: #34445e;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poussu.studymate.userInterface.wordGameUI.WordGameMenu">
    <top>
       <BorderPane prefHeight="120.0" prefWidth="429.0" style="-fx-background-color: #2e3c51;" BorderPane.alignment="CENTER">
          <center>
@@ -71,38 +69,28 @@
    <left>
       <AnchorPane prefHeight="502.0" prefWidth="416.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="myListView" editable="true" layoutX="209.0" layoutY="75.0" prefHeight="347.0" prefWidth="214.0" />
-            <TextField layoutX="209.0" layoutY="7.0" prefHeight="38.0" prefWidth="215.0" promptText="Search">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-            <Label layoutX="11.0" layoutY="-2.0" prefHeight="57.0" prefWidth="198.0" text="Welcome to dictionary!" textFill="WHITE">
+            <ListView fx:id="myListView" editable="true" layoutX="209.0" layoutY="18.0" prefHeight="404.0" prefWidth="214.0" />
+            <Label layoutX="11.0" layoutY="-2.0" prefHeight="57.0" prefWidth="198.0" text="Welcome to word game!" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="53.0" prefHeight="19.0" prefWidth="185.0" text="In here you can add new lists" textFill="WHITE">
+            <Label layoutX="11.0" layoutY="53.0" prefHeight="19.0" prefWidth="185.0" text="In here you can choose lists" textFill="WHITE">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
-            <Label fx:id="wordList" layoutX="10.0" layoutY="72.0" prefHeight="19.0" prefWidth="212.0" text="of words for you to pratice with." textFill="WHITE">
+            <Label fx:id="wordList" layoutX="10.0" layoutY="72.0" prefHeight="19.0" prefWidth="212.0" text="of words to pratice with." textFill="WHITE">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="115.0" prefHeight="19.0" prefWidth="210.0" text="Isnt that exciting?" textFill="WHITE">
+            <Label layoutX="11.0" layoutY="145.0" prefHeight="19.0" prefWidth="210.0" text="Start off by choosing the " textFill="WHITE">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="145.0" prefHeight="19.0" prefWidth="210.0" text="Lets get started!" textFill="WHITE">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Label>
-            <Button layoutX="28.0" layoutY="307.0" mnemonicParsing="false" onAction="#newList" prefHeight="34.0" prefWidth="133.0" style="-fx-background-color: #37c6cc;" text="Create new list" textFill="WHITE">
+            <Button layoutX="28.0" layoutY="307.0" mnemonicParsing="false" onAction="#startGameButton" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: #37c6cc;" text="Start the game" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -111,27 +99,32 @@
                </cursor></Button>
             <BorderPane layoutY="421.0" prefHeight="81.0" prefWidth="430.0" style="-fx-background-color: #2e3c51;">
                <left>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <Label layoutX="26.0" layoutY="33.0" opacity="0.6" text="right clicking the list." textFill="WHITE" />
-                        <Label layoutX="26.0" layoutY="14.0" opacity="0.6" prefHeight="12.0" prefWidth="221.0" text="You can edit or delete by" textFill="WHITE" />
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
                </left>
             </BorderPane>
-            <TextField fx:id="listName" layoutX="53.0" layoutY="262.0" prefHeight="24.0" prefWidth="115.0" promptText="List name" style="-fx-background-color: #34445e; -fx-text-fill: #FFFFFF;">
-               <font>
-                  <Font size="14.0" />
-               </font></TextField>
-            <Line endX="55.0" layoutX="104.0" layoutY="292.0" startX="-76.0" stroke="#949cb1" />
-            <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="28.0" layoutY="266.0" opacity="0.54" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/idCard.png" />
-               </image>
-            </ImageView>
             <Label fx:id="errorLabel" layoutX="23.0" layoutY="212.0" prefHeight="39.0" prefWidth="162.0" textFill="#f81f1f">
                <font>
                   <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="164.0" prefHeight="19.0" prefWidth="210.0" text="lists you which you wish to " textFill="WHITE">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="222.0" prefHeight="19.0" prefWidth="210.0" text="To select multiple lists press" textFill="WHITE">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="242.0" prefHeight="19.0" prefWidth="210.0" text="Ctrl + Click on the wanted lists" textFill="WHITE">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="183.0" prefHeight="19.0" prefWidth="210.0" text="practice with." textFill="WHITE">
+               <font>
+                  <Font size="12.0" />
                </font>
             </Label>
          </children>

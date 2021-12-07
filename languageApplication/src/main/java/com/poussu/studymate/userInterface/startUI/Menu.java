@@ -1,4 +1,4 @@
-package com.poussu.studymate.startUI;
+package com.poussu.studymate.userInterface.startUI;
 
 import java.io.IOException;
 import java.net.URL;
@@ -35,6 +35,10 @@ public class Menu implements Initializable{
     @FXML
     private void dictionaryButton() throws IOException {
         m.changeScene("dictionary-menu.fxml");
+    }
+    @FXML
+    private void wordGameButton() throws IOException {
+        m.changeScene("wordGame-menu.fxml");
     }
 
 }

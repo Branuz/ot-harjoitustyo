@@ -1,4 +1,4 @@
-package com.poussu.studymate.startUI;
+package com.poussu.studymate.userInterface.startUI;
 
 import java.io.IOException;
 import java.sql.Connection;
