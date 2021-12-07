@@ -2,7 +2,7 @@ package com.poussu.studymate.userInterface.startUI;
 
 import java.io.IOException;
 import java.sql.Connection;
-import com.poussu.studymate.Main;
+import com.poussu.studymate.StudyMateUi;
 import com.poussu.studymate.databasehandler.ConnectionManager;
 import com.poussu.studymate.databasehandler.DatabaseUpdater;
 
@@ -29,7 +29,7 @@ public class CreateAccount {
 
     @FXML
     private void onCreateAccountClick() throws IOException {
-        Main m = new Main();
+        StudyMateUi m = new StudyMateUi();
 
         //Checking if everything is filled correctly.
         boolean emailCheck = checkIfEmptyTextField(email);

@@ -2,7 +2,7 @@ package com.poussu.studymate.userInterface.startUI;
 
 import java.io.IOException;
 import java.sql.*;
-import com.poussu.studymate.Main;
+import com.poussu.studymate.StudyMateUi;
 import com.poussu.studymate.databasehandler.UserManager;
 import com.poussu.studymate.userdata.User;
 
@@ -12,7 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class Login {
-    private Main m = new Main();
+    private StudyMateUi m = new StudyMateUi();
     @FXML
     private Label wrongLogin;
     @FXML

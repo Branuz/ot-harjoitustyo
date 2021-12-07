@@ -5,7 +5,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import com.poussu.studymate.Main;
+import com.poussu.studymate.StudyMateUi;
 import com.poussu.studymate.databasehandler.ConnectionManager;
 import com.poussu.studymate.databasehandler.DatabaseUpdater;
 import com.poussu.studymate.dictionary.EveryList;
@@ -18,13 +18,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.beans.binding.Bindings;
 
 public class DictionaryMenu implements Initializable{
 
-    private Main m = new Main();
+    private StudyMateUi m = new StudyMateUi();
     private static WordList wlist;
 
     @FXML
@@ -35,7 +34,6 @@ public class DictionaryMenu implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      //  myListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         ArrayList<WordList> everyL = new EveryList().getWordLists();
         if(everyL.size()>0) {
             for(WordList w : everyL){

@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import com.poussu.studymate.Main;
+import com.poussu.studymate.StudyMateUi;
 import com.poussu.studymate.dictionary.EveryList;
 import com.poussu.studymate.dictionary.WordList;
 
@@ -16,7 +16,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 
 public class WordGameMenu implements Initializable {
-    private Main m = new Main();
+    private StudyMateUi m = new StudyMateUi();
 
     @FXML
     private ListView<String> myListView;

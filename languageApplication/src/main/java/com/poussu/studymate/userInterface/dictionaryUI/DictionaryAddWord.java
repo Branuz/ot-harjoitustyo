@@ -5,7 +5,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import com.poussu.studymate.Main;
+import com.poussu.studymate.StudyMateUi;
 import com.poussu.studymate.databasehandler.ConnectionManager;
 import com.poussu.studymate.databasehandler.DatabaseUpdater;
 import com.poussu.studymate.dictionary.Word;
@@ -34,7 +34,7 @@ public class DictionaryAddWord extends DictionaryMenu {
 
     private ObservableList<Word> listItems = FXCollections.observableArrayList();
 
-    private Main m = new Main();
+    private StudyMateUi m = new StudyMateUi();
     private Login l = new Login();
 
     @Override

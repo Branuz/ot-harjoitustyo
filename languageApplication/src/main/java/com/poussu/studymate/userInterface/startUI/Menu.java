@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.poussu.studymate.Main;
+import com.poussu.studymate.StudyMateUi;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 public class Menu implements Initializable{
-    private Main m = new Main();
+    private StudyMateUi m = new StudyMateUi();
     private Login l = new Login();
 
     @FXML
