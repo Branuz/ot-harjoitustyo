@@ -8,8 +8,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Connection;
 
-import com.poussu.studymate.dataBaseHandler.ConnectionManager;
-import com.poussu.studymate.dataBaseHandler.DatabaseUpdater;
+import com.poussu.studymate.databasehandler.ConnectionManager;
+import com.poussu.studymate.databasehandler.DatabaseUpdater;
 
 public class Main extends Application {
     private static Stage stg;

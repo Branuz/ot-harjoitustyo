@@ -1,4 +1,4 @@
-package com.poussu.studymate.userData;
+package com.poussu.studymate.userdata;
 
 public class User {
     private String name;
@@ -6,7 +6,7 @@ public class User {
     private String email;
 
     // User object that contains the users informations.
-    public User (String name, String password, String email) {
+    public User(String name, String password, String email) {
         this.name = name;
         this.password = password;
         this.email = email;

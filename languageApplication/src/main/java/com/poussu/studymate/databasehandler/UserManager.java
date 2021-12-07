@@ -1,4 +1,4 @@
-package com.poussu.studymate.dataBaseHandler;
+package com.poussu.studymate.databasehandler;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.poussu.studymate.userData.User;
+import com.poussu.studymate.userdata.User;
 
 public class UserManager {
 
     //Used for adding a new user in the database.
-    public User getLoggedUser(String name, String password) throws SQLException{
+    public User getLoggedUser(String name, String password) throws SQLException {
                 
         Connection conn = null;
         try {
@@ -25,16 +25,18 @@ public class UserManager {
                 user.setEmail(rs.getString("email"));
                 user.setName(rs.getString("name"));
                 user.setPassword(rs.getString("password"));
-                }
+            }
 
             conn.close();
             rs.close();
             return user;
             
         } catch (Exception e) {
-            if(conn!=null)conn.close();
-            System.out.println(e);
+            if (conn != null) {
+                conn.close();
             }
-        return null;
+            System.out.println(e);
         }
+        return null;
+    }
 }

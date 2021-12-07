@@ -2,7 +2,7 @@ package com.poussu.studymate;
 
 import static org.junit.Assert.assertEquals;
 
-import com.poussu.studymate.userData.User;
+import com.poussu.studymate.userdata.User;
 
 import org.junit.Before;
 import org.junit.Test;

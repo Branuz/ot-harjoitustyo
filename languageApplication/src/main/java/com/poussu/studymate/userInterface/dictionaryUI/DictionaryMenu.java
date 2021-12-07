@@ -6,8 +6,8 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import com.poussu.studymate.Main;
-import com.poussu.studymate.dataBaseHandler.ConnectionManager;
-import com.poussu.studymate.dataBaseHandler.DatabaseUpdater;
+import com.poussu.studymate.databasehandler.ConnectionManager;
+import com.poussu.studymate.databasehandler.DatabaseUpdater;
 import com.poussu.studymate.dictionary.EveryList;
 import com.poussu.studymate.dictionary.WordList;
 

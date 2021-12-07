@@ -1,4 +1,4 @@
-package com.poussu.studymate.dataBaseHandler;
+package com.poussu.studymate.databasehandler;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import com.poussu.studymate.dictionary.WordList;
 public class ListManager {
 
     //Fetches all the words from the database and makes corresponding lists of them based on their names.
-    public ArrayList<WordList> getSavedLists(Connection conn, String user) throws SQLException{
+    public ArrayList<WordList> getSavedLists(Connection conn, String user) throws SQLException {
         
         try {
             ArrayList<WordList> lists = new ArrayList<>();
@@ -20,14 +20,14 @@ public class ListManager {
 
             while (rs.next()) {
                 lists.add(new WordList(rs.getString("name")));
-                }
+            }
 
-                for(WordList l : lists){
-                    rs =  s.executeQuery("SELECT word, translation FROM List WHERE name='" + l.getName() + "';");
-                    while (rs.next()) {
-                        l.getList().add(new Word(rs.getString("word"), (rs.getString("translation"))));
-                        }
+            for (WordList l : lists) {
+                rs =  s.executeQuery("SELECT word, translation FROM List WHERE name='" + l.getName() + "';");
+                while (rs.next()) {
+                    l.getList().add(new Word(rs.getString("word"), (rs.getString("translation"))));
                 }
+            }
 
             conn.close();
             rs.close();
@@ -36,17 +36,11 @@ public class ListManager {
             return lists;
             
         } catch (Exception e) {
-            if(conn!=null)conn.close();
+            if (conn != null) {
+                conn.close();
+            }
             System.out.println(e);
-            }
+        }
         return null;
-        }
-
-        public void removeList(Connection conn){
-            try {
-                
-            } catch (Exception e) {
-                //TODO: handle exception
-            }
-        }
+    }
 }

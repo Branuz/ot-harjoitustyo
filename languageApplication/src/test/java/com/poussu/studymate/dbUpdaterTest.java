@@ -5,10 +5,9 @@ import static org.junit.Assert.assertEquals;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-import com.poussu.studymate.dataBaseHandler.ConnectionManager;
-import com.poussu.studymate.dataBaseHandler.DatabaseUpdater;
-import com.poussu.studymate.dataBaseHandler.ListManager;
-import com.poussu.studymate.dictionary.EveryList;
+import com.poussu.studymate.databasehandler.ConnectionManager;
+import com.poussu.studymate.databasehandler.DatabaseUpdater;
+import com.poussu.studymate.databasehandler.ListManager;
 import com.poussu.studymate.dictionary.WordList;
 
 import org.junit.Before;

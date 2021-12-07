@@ -3,8 +3,8 @@ package com.poussu.studymate.userInterface.startUI;
 import java.io.IOException;
 import java.sql.*;
 import com.poussu.studymate.Main;
-import com.poussu.studymate.dataBaseHandler.UserManager;
-import com.poussu.studymate.userData.User;
+import com.poussu.studymate.databasehandler.UserManager;
+import com.poussu.studymate.userdata.User;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

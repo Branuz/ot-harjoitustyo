@@ -1,4 +1,4 @@
-package com.poussu.studymate.dataBaseHandler;
+package com.poussu.studymate.databasehandler;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
