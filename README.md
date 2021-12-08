@@ -8,6 +8,8 @@ Harjoitustyön aiheena on kielen opiskelu ohjelma johon pystyy lisäämään ja 
 
 [Arkkitehtuuri](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/Architecture.md)
 
+[Release](https://github.com/Branuz/ot-harjoitustyo/releases/tag/viikko5)
+
 
 <h2>Ohjeet</h2>
 
