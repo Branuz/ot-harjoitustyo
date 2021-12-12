@@ -28,8 +28,8 @@ public class dbUpdaterTest {
 
     @Test
     public void tableCreationAndInsertingWorks() throws Exception{
-        String setup = "CREATE TABLE Users (id INTEGER PRIMARY KEY, email TEXT, name TEXT, password TEXT);";
-        String listSetup = "CREATE TABLE List (id INTEGER PRIMARY KEY, word TEXT, translation TEXT, user TEXT, name TEXT);";
+        String setup = "CREATE TABLE  IF NOT EXISTS  Users (id INTEGER PRIMARY KEY, email TEXT, name TEXT, password TEXT);";
+        String listSetup = "CREATE TABLE  IF NOT EXISTS  List (id INTEGER PRIMARY KEY, word TEXT, translation TEXT, user TEXT, name TEXT);";
         db.databaseCreate(conn, setup);
         conn = ConnectionManager.getConnection();
         db.databaseCreate(conn, listSetup);
