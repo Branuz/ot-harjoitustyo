@@ -17,19 +17,16 @@ public class DatabaseUpdater {
                 p.setString(i + 1, userPara[i]);
             }
             p.executeUpdate();
-            conn.close();
-            p.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            if (p != null) {
                 try {
                     p.close();
+                    conn.close();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
         }
         
     }

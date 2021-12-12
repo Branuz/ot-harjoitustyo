@@ -12,11 +12,12 @@ public class ListManager {
 
     //Fetches all the words from the database and makes corresponding lists of them based on their names.
     public ArrayList<WordList> getSavedLists(Connection conn, String user) throws SQLException {
-        
+        ResultSet rs = null;
+        Statement s = null;
         try {
             ArrayList<WordList> lists = new ArrayList<>();
-            Statement s = conn.createStatement();
-            ResultSet rs = s.executeQuery("SELECT DISTINCT name FROM List WHERE user='" + user + "';");
+            s = conn.createStatement();
+            rs = s.executeQuery("SELECT DISTINCT name FROM List WHERE user='" + user + "';");
 
             while (rs.next()) {
                 lists.add(new WordList(rs.getString("name")));
@@ -29,18 +30,18 @@ public class ListManager {
                 }
             }
 
-            conn.close();
-            rs.close();
-
             //Returns a list which contains all the wordlists created.
             return lists;
             
-        } catch (Exception e) {
-            if (conn != null) {
+        } finally {
+            try {
+                rs.close();
+                s.close();
                 conn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
             }
-            System.out.println(e);
-        }
-        return null;
+    }
     }
 }

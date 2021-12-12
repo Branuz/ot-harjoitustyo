@@ -31,7 +31,7 @@ public class StudyMateUi extends Application {
         stg.getScene().setRoot(pane);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void starterMain(String[] args) throws Exception {
         conn = ConnectionManager.getConnection();
        // Prepares the sqlite database before launch
         DatabaseUpdater db = new DatabaseUpdater();

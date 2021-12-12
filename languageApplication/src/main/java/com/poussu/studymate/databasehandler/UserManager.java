@@ -14,11 +14,13 @@ public class UserManager {
     public User getLoggedUser(String name, String password) throws SQLException {
                 
         Connection conn = null;
+        Statement s = null;
+        ResultSet rs = null;
         try {
             User user = new User(null, null, null);
             conn = DriverManager.getConnection("jdbc:sqlite:studyMate.db");
-            Statement s = conn.createStatement();
-            ResultSet rs = s.executeQuery("SELECT * FROM Users WHERE name='" + name + "'" + " AND password='" + password + "'" 
+            s = conn.createStatement();
+            rs = s.executeQuery("SELECT * FROM Users WHERE name='" + name + "'" + " AND password='" + password + "'" 
                 + " OR email='" + name + "'" + " AND password='" + password + "'");
 
             while (rs.next()) {
@@ -32,10 +34,16 @@ public class UserManager {
             return user;
             
         } catch (Exception e) {
-            if (conn != null) {
-                conn.close();
+        } finally {
+            if (s != null) {
+                try {
+                    rs.close();
+                    s.close();
+                    conn.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-            System.out.println(e);
         }
         return null;
     }
