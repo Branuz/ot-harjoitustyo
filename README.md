@@ -16,7 +16,22 @@ Harjoitustyön aiheena on kielen opiskelu ohjelma johon pystyy lisäämään ja 
 Ohjelman saa suoritettua hakemistossa languageApplication komennolla: mvn compile exec:java -Dexec.mainClass=com.poussu.studymate.Main
 
 Sekä testattua komennolla mvn test
+<h2>Komentorivi komennot</h2>
 
+<h3>Testit</h3>
+
+Testit suoritetaan komennolla
+
+
+```
+mvn test
+```
+Testikattavuus raportti saadaan luotua komennolla
+
+```
+mvn test jacoco:report
+```
+  
 <h2> Tehtävät</h2>
 <h3> Viikko 1</h3>
 
