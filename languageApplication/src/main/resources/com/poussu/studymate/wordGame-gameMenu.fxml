@@ -117,6 +117,16 @@
                   <Font size="17.0" />
                </font>
             </Label>
+            <Label fx:id="doneLabel" layoutX="46.0" layoutY="71.0" prefHeight="67.0" prefWidth="322.0" textFill="#1bff01">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="answerLabel" layoutX="65.0" layoutY="71.0" prefHeight="59.0" prefWidth="325.0" textFill="RED">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

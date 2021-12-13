@@ -3,13 +3,11 @@ package com.poussu.studymate.userInterface.wordGameUI;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.ResourceBundle;
 
 import com.poussu.studymate.StudyMateUi;
-import com.poussu.studymate.dictionary.EveryList;
 import com.poussu.studymate.dictionary.Word;
-import com.poussu.studymate.dictionary.WordList;
+import com.poussu.studymate.wordgame.WordGame;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,29 +16,26 @@ import javafx.scene.control.TextField;
 
 public class WordGameController implements Initializable{
     private StudyMateUi m = new StudyMateUi();
-    private WordGameMenu wordmenu = new WordGameMenu();
     private ArrayList<Word> randomWords;
     private int currentWord = 0;
+    private int correctWordCount = 0;
+    private WordGame game = new WordGame();
 
     @FXML
     Label wordLabel;
     @FXML
     Label counterLabel;
     @FXML
-    TextField trannslatinField;
+    TextField translationField;
+    @FXML
+    Label doneLabel;
+    @FXML
+    Label answerLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        EveryList el = new EveryList();
-        randomWords = new ArrayList<>();
-
-        for(WordList wl: el.getWordLists()){
-            if(wordmenu.getChosenList().contains(wl.getName())) {
-                randomWords.addAll(wl.getList());
-            }
-        }
-        counterLabel.setText("0/"+randomWords.size());
-        Collections.shuffle(randomWords);
+        randomWords = game.randomWordList();
+        counterLabel.setText("0/" + randomWords.size());
         wordLabel.setText(randomWords.get(currentWord).getWord());
     }
 
@@ -56,7 +51,24 @@ public class WordGameController implements Initializable{
 
     @FXML
     private void checkButton() {
-        System.out.println(wordmenu.getChosenList());
+        if(currentWord < randomWords.size()) {
+            if (game.translationCheck(randomWords.get(currentWord), translationField.getText().toString())) {
+                answerLabel.setText("");
+                correctWordCount++;
+                currentWord++;
+                counterLabel.setText(correctWordCount + "/" + randomWords.size());
+                
+                if(currentWord < randomWords.size()) {
+                    wordLabel.setText(randomWords.get(currentWord).getWord());
+                }
+
+                if(currentWord == randomWords.size()) {
+                    doneLabel.setText("Congrats you finished everything!");
+                }
+            } else {
+                answerLabel.setText("Wrong answer, try again.");
+            }
+        }
     }
 
     @FXML
