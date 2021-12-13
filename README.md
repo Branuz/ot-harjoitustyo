@@ -39,9 +39,11 @@ Komento
 ```
 mvn package 
 ```
-Ohjelma luodaan hakemistoon target nimellä studymate-1.0-SNAPSHOT
+Ohjelma luodaan hakemistoon target nimellä studymate-1.0-SNAPSHOT.jar
+
 
 <h3>Checkstyle</h3>
+
 Komento
 
 ```
