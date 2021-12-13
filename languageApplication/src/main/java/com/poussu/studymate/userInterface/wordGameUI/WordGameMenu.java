@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 
 public class WordGameMenu implements Initializable {
     private StudyMateUi m = new StudyMateUi();
+    private static ArrayList<String> chosenLists;
 
     @FXML
     private ListView<String> myListView;
@@ -45,9 +46,13 @@ public class WordGameMenu implements Initializable {
     }
 
     @FXML
-    private void startGameButton(){
-       ArrayList<String> list =  new ArrayList<>();
-       list.addAll(myListView.getSelectionModel().getSelectedItems());
-       
+    private void startGameButton() throws IOException{
+       chosenLists =  new ArrayList<>();
+       chosenLists.addAll(myListView.getSelectionModel().getSelectedItems());
+       m.changeScene("wordGame-gameMenu.fxml");
+    }
+
+    public ArrayList<String> getChosenList(){
+        return chosenLists;
     }
 }
