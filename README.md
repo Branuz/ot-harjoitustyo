@@ -2,6 +2,8 @@
 
 Harjoitustyön aiheena on kielen opiskelu ohjelma johon pystyy lisäämään ja harjoittelemaan erillaisten uusien sanojen ja lauseiden kirjoittamista ja muistamista.
 
+<h2>Dokumentaatio</h2>
+
 [Työaikakirjanpito](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/tuntikirjanpito.md)
 
 [Alustava määrittelydokumentti](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/specificationOfRequirements.md)
