@@ -20,6 +20,7 @@ public class WordGameController implements Initializable{
     private int currentWord = 0;
     private int correctWordCount = 0;
     private WordGame game = new WordGame();
+    private Boolean checked = false;
 
     @FXML
     Label wordLabel;
@@ -31,6 +32,8 @@ public class WordGameController implements Initializable{
     Label doneLabel;
     @FXML
     Label answerLabel;
+    @FXML
+    Label correctLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -55,12 +58,13 @@ public class WordGameController implements Initializable{
         if(currentWord < randomWords.size()) {
             if (game.translationCheck(randomWords.get(currentWord), translationField.getText().toString())) {
                 answerLabel.setText("");
-                correctWordCount++;
-                currentWord++;
+                if(!checked) {
+                    correctWordCount++;
+                    checked = true;
+                }
                 counterLabel.setText(correctWordCount + "/" + randomWords.size());
-                translationField.setText("");
                 if(currentWord < randomWords.size()) {
-                    wordLabel.setText(randomWords.get(currentWord).getWord());
+                    correctLabel.setText("Correct!");
                 }
 
                 if(currentWord == randomWords.size()) {
@@ -77,6 +81,8 @@ public class WordGameController implements Initializable{
         currentWord++;
         answerLabel.setText("");
         translationField.setText("");
+        correctLabel.setText("");
+        checked = false;
         if(currentWord < randomWords.size()){
             wordLabel.setText(randomWords.get(currentWord).getWord());
         }

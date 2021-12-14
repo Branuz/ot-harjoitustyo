@@ -27,6 +27,7 @@ public class DictionaryMenu implements Initializable{
     private static WordList wlist;
     private static String editList;
 
+
     @FXML
     private ListView<String> myListView;
     @FXML

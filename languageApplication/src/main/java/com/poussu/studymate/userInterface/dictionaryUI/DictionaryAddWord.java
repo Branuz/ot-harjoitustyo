@@ -13,10 +13,14 @@ import com.poussu.studymate.dictionary.Word;
 import com.poussu.studymate.userInterface.startUI.Login;
 import com.poussu.studymate.wordgame.WordGame;
 
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -42,6 +46,7 @@ public class DictionaryAddWord extends DictionaryMenu {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         WordGame game = new WordGame();
         if(menu.getEditList()!=null){
             setWlist(menu.getEditList());
@@ -50,13 +55,12 @@ public class DictionaryAddWord extends DictionaryMenu {
             ArrayList<Word> wordList =  game.randomWordList(list);
             getWlist().getList().addAll(wordList);
             listItems.addAll(wordList);
-
             words.setCellValueFactory(new PropertyValueFactory<Word, String>("word"));
             translations.setCellValueFactory(new PropertyValueFactory<Word, String>("translation"));
             table.setItems(listItems);
 
-
         }
+        cellEditorSettings();
     }
 
     @FXML
@@ -103,5 +107,43 @@ public class DictionaryAddWord extends DictionaryMenu {
 
     public ObservableList<Word> getListItems(){
         return listItems;
+    }
+
+
+    private void cellEditorSettings(){
+        table.setRowFactory(lv -> {
+
+            TableRow<Word> cell = new TableRow<>();
+            ContextMenu contextMenu = new ContextMenu();
+
+            MenuItem deleteItem = new MenuItem();
+            deleteItem.textProperty().bind(Bindings.format("Delete"));
+            deleteItem.setOnAction(event -> {
+                Connection conn;
+
+                try {
+                    conn = ConnectionManager.getConnection();
+                    DatabaseUpdater db = new DatabaseUpdater();
+                    String statement = "DELETE FROM List WHERE word = ? AND translation = ? AND user = ?";
+                    String[] userPara= {cell.getItem().getWord(), cell.getItem().getTranslation(), l.getLoggedUser().getName()};
+
+                    db.databaseInsert(conn, statement, userPara);
+                    table.getItems().remove(cell.getItem());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            });
+            
+            contextMenu.getItems().addAll(deleteItem);
+
+            cell.emptyProperty().addListener((obs, wasEmpty, isNowEmpty) -> {
+                if (isNowEmpty) {
+                    cell.setContextMenu(null);
+                } else {
+                    cell.setContextMenu(contextMenu);
+                }
+            });
+            return cell ;
+        });
     }
 }

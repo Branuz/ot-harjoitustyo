@@ -67,7 +67,7 @@
          </center>
       </BorderPane>
    </top>
-   <center>
+   <bottom>
       <AnchorPane prefHeight="502.0" prefWidth="416.0" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="243.0" layoutY="235.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="32.0" prefWidth="133.0" style="-fx-background-color: #37c6cc;" text="Next" textFill="WHITE">
@@ -127,7 +127,12 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <Label fx:id="correctLabel" layoutX="150.0" layoutY="93.0" textFill="#07e145">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-   </center>
+   </bottom>
 </BorderPane>
