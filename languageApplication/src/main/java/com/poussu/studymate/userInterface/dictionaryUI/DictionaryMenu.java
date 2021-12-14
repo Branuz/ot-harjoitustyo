@@ -25,6 +25,7 @@ public class DictionaryMenu implements Initializable{
 
     private StudyMateUi m = new StudyMateUi();
     private static WordList wlist;
+    private static String editList;
 
     @FXML
     private ListView<String> myListView;
@@ -76,7 +77,13 @@ public class DictionaryMenu implements Initializable{
             editItem.textProperty().bind(Bindings.format("Edit \"%s\"", cell.itemProperty()));
             editItem.setOnAction(event -> {
                 String item = cell.getItem();
-                // code to edit item...
+                editList = item;
+                try {
+                    m.changeScene("dictionary-addNewMenu.fxml");
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             });
 
             MenuItem deleteItem = new MenuItem();
@@ -112,6 +119,14 @@ public class DictionaryMenu implements Initializable{
 
     public WordList getWlist() {
         return wlist;
+    }
+
+    public String getEditList() {
+        return editList;
+    }
+
+    public void setWlist(String name){
+        wlist = new WordList(name);
     }
 
 }

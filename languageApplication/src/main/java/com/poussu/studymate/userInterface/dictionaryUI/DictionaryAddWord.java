@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import com.poussu.studymate.StudyMateUi;
 import com.poussu.studymate.databasehandler.ConnectionManager;
 import com.poussu.studymate.databasehandler.DatabaseUpdater;
 import com.poussu.studymate.dictionary.Word;
 import com.poussu.studymate.userInterface.startUI.Login;
+import com.poussu.studymate.wordgame.WordGame;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,10 +38,25 @@ public class DictionaryAddWord extends DictionaryMenu {
 
     private StudyMateUi m = new StudyMateUi();
     private Login l = new Login();
+    private DictionaryMenu menu = new DictionaryMenu();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //To be made
+        WordGame game = new WordGame();
+        if(menu.getEditList()!=null){
+            setWlist(menu.getEditList());
+            ArrayList<String> list = new ArrayList<>();
+            list.add(menu.getEditList());
+            ArrayList<Word> wordList =  game.randomWordList(list);
+            getWlist().getList().addAll(wordList);
+            listItems.addAll(wordList);
+
+            words.setCellValueFactory(new PropertyValueFactory<Word, String>("word"));
+            translations.setCellValueFactory(new PropertyValueFactory<Word, String>("translation"));
+            table.setItems(listItems);
+
+
+        }
     }
 
     @FXML
@@ -66,14 +83,17 @@ public class DictionaryAddWord extends DictionaryMenu {
 
         DatabaseUpdater manager = new DatabaseUpdater();
         String[] values = {wordField.getText().toString(), translationField.getText().toString(), l.getLoggedUser().getName(), getWlist().getName()};
+
         String statement = "INSERT INTO List(word, translation, user, name) VALUES (?,?,?,?)";
         getWlist().getList().add(new Word(wordField.getText().toString(), translationField.getText().toString()));
+        
         manager.databaseInsert(conn, statement, values);
         listItems.add(new Word(wordField.getText().toString(), translationField.getText().toString()));
         words.setCellValueFactory(new PropertyValueFactory<Word, String>("word"));
         translations.setCellValueFactory(new PropertyValueFactory<Word, String>("translation"));
         table.setItems(listItems);
-
+        wordField.setText("");
+        translationField.setText("");
 
     } catch (Exception e) {
         // TODO Auto-generated catch block

@@ -6,7 +6,6 @@ import java.util.Collections;
 import com.poussu.studymate.dictionary.EveryList;
 import com.poussu.studymate.dictionary.Word;
 import com.poussu.studymate.dictionary.WordList;
-import com.poussu.studymate.userInterface.wordGameUI.WordGameMenu;
 
 public class WordGame {
     
@@ -17,14 +16,13 @@ public class WordGame {
         return false;
     }
 
-    public ArrayList<Word> randomWordList() {
-         WordGameMenu wordmenu = new WordGameMenu();
+    public ArrayList<Word> randomWordList(ArrayList<String> list) {
          EveryList el = new EveryList();
          ArrayList <Word> randomWords = new ArrayList<>();
 
-         if (wordmenu.getChosenList().size() > 0) {
+         if (list!=null) {
             for(WordList wl: el.getWordLists()) {
-                if (wordmenu.getChosenList().contains(wl.getName())) {
+                if (list.contains(wl.getName())) {
                     randomWords.addAll(wl.getList());
                 }
             }

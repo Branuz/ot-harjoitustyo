@@ -34,7 +34,8 @@ public class WordGameController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        randomWords = game.randomWordList();
+        WordGameMenu gamemenu = new WordGameMenu();
+        randomWords = game.randomWordList(gamemenu.getChosenList());
         counterLabel.setText("0/" + randomWords.size());
         wordLabel.setText(randomWords.get(currentWord).getWord());
     }
@@ -57,7 +58,7 @@ public class WordGameController implements Initializable{
                 correctWordCount++;
                 currentWord++;
                 counterLabel.setText(correctWordCount + "/" + randomWords.size());
-                
+                translationField.setText("");
                 if(currentWord < randomWords.size()) {
                     wordLabel.setText(randomWords.get(currentWord).getWord());
                 }
@@ -73,7 +74,15 @@ public class WordGameController implements Initializable{
 
     @FXML
     private void nextButton() {
-        
+        currentWord++;
+        answerLabel.setText("");
+        translationField.setText("");
+        if(currentWord < randomWords.size()){
+            wordLabel.setText(randomWords.get(currentWord).getWord());
+        }
+        if(currentWord == randomWords.size()) {
+            doneLabel.setText("Congrats you finished everything!");
+        }
     }
 
 }
