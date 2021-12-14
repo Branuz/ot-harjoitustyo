@@ -8,9 +8,11 @@ Harjoitustyön aiheena on kielen opiskelu ohjelma johon pystyy lisäämään ja 
 
 [Alustava määrittelydokumentti](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/specificationOfRequirements.md)
 
+[Alustava käyttöohje](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/Usage%20instructions.md)
+
 [Arkkitehtuuri](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/Architecture.md)
 
-[Release](https://github.com/Branuz/ot-harjoitustyo/releases/tag/viikko5)
+[Release](https://github.com/Branuz/ot-harjoitustyo/releases/tag/viikko6)
 
 
 <h2>Ohjeet</h2>
