@@ -21,12 +21,12 @@ public class DatabaseUpdater {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-                try {
-                    p.close();
-                    conn.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            try {
+                p.close();
+                conn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         
     }

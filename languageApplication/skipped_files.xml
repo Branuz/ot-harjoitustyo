@@ -12,4 +12,5 @@
     <suppress files="src.main.java.com.poussu.studymate.userInterface.startUI.Login.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="src.main.java.com.poussu.studymate.userInterface.startUI.Menu.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="src.main.java.com.poussu.studymate.userInterface.wordGameUI.WordGameMenu.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="src.main.java.com.poussu.studymate.userInterface.wordGameUI.WordGameController.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>

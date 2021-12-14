@@ -42,6 +42,6 @@ public class ListManager {
                 e.printStackTrace();
                 return null;
             }
-    }
+        }
     }
 }
