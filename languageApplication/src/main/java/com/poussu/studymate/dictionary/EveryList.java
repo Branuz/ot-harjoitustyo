@@ -10,7 +10,11 @@ import com.poussu.studymate.userInterface.startUI.Login;
 public class EveryList {
     private Login l = new Login();
     
-    //Used to get all the lists 
+    
+    /** 
+     * Used for getting all the word lists.
+     * @return returns ArrayList<WordList> 
+     */
     public ArrayList<WordList> getWordLists() {
         Connection conn = null;
         ListManager lm = new ListManager();
