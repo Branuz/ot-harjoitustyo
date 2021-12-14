@@ -35,6 +35,8 @@ Testikattavuus raportti saadaan luotua komennolla
 ```
 mvn test jacoco:report
 ```
+Testikattavuutta pääse tarkatselamaan selaimen kautta hakemistosta /target/site/jacoco/index.html
+
 <h3>Jarin generointi</h3>
 
 Komento
@@ -51,6 +53,14 @@ Komento
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
+<h3>Javadoc</h3>
+
+Javadocin saa luotua komennolla 
+
+```
+mvn javadoc:javadoc
+```
+Tämä luo hakemistoon /target/site/apidocs/index.html jonka kautta voi päästä tukimaan javdocia.
   
 <h2> Tehtävät</h2>
 <h3> Viikko 1</h3>
