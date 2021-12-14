@@ -9,4 +9,6 @@
 | 30.11 | 6    | Lisäsin listojen ja sanojen lisäykset dictionaryy sekä niidet GUI:t. Sekä aloin valmistelemaan tietokanta yhteyttä.  |
 | 6.12 | 7    | Koodi faktorointia ja sain dictionaryn läheskokonaan toiminta kuntoon  |
 | 7.12 | 9    | Aloin rakentmaan wordgame funktiota ja taistelin bugien kanssa että saisin toimivan version valmiiksi  |
-| yht   | 46   | | 
+| 12.12 | 4    |Korjasin ilmentyneitä bugeja ja jatkoin wordgame function rakentamista  |
+| 13.12 | 4    |Sain wordgame function kokonaan toimintavalmiiksi  |
+| yht   | 54   | | 
