@@ -11,6 +11,7 @@ import com.poussu.studymate.dictionary.WordList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
@@ -23,6 +24,8 @@ public class WordGameMenu implements Initializable {
     private ListView<String> myListView;
     @FXML
     private TextField listName;
+    @FXML
+    private Label errorLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -46,10 +49,19 @@ public class WordGameMenu implements Initializable {
     }
 
     @FXML
-    private void startGameButton() throws IOException{
+    private void achievementButton() throws IOException{
+        m.changeScene("achievements.fxml");
+    }
+
+    @FXML
+    private void startGameButton() throws IOException {
        chosenLists =  new ArrayList<>();
        chosenLists.addAll(myListView.getSelectionModel().getSelectedItems());
-       m.changeScene("wordGame-gameMenu.fxml");
+       if(myListView.getSelectionModel().getSelectedItems().size()>0) {
+        m.changeScene("wordGame-gameMenu.fxml");
+       } else {
+           errorLabel.setText("Select a list of words!");
+       }
     }
 
     public ArrayList<String> getChosenList(){

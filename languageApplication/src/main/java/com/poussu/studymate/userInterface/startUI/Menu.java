@@ -39,4 +39,9 @@ public class Menu implements Initializable{
         m.changeScene("wordGame-menu.fxml");
     }
 
+    @FXML
+    private void achievementButton() throws IOException{
+        m.changeScene("achievements.fxml");
+    }
+
 }

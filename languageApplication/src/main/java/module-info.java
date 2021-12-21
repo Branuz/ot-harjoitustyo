@@ -10,6 +10,7 @@ module com.poussu.studymate {
     opens com.poussu.studymate.dictionary to javafx.fxml, javafx.base;
     opens com.poussu.studymate to javafx.fxml, javafx.base;
     opens com.poussu.studymate.userInterface.dictionaryUI to javafx.fxml, javafx.base;
+    opens com.poussu.studymate.userInterface.achievementsUi to javafx.fxml, javafx.base;
     opens com.poussu.studymate.userInterface.startUI to javafx.fxml;
     exports com.poussu.studymate;
 

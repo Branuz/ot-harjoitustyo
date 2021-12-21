@@ -79,6 +79,11 @@ public class DictionaryAddWord extends DictionaryMenu {
     }
 
     @FXML
+    private void achievementButton() throws IOException{
+        m.changeScene("achievements.fxml");
+    }
+
+    @FXML
     private void addWord() throws SQLException {
         Connection conn = null;
 

@@ -66,6 +66,11 @@ public class DictionaryMenu implements Initializable{
         m.changeScene("main-menu.fxml");
     }
 
+    @FXML
+    private void achievementButton() throws IOException{
+        m.changeScene("achievements.fxml");
+    }
+
     //Adds editing and deleting for list items
     private void cellEditorSettings(){
         myListView.setCellFactory(lv -> {

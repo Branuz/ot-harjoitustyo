@@ -30,12 +30,12 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="trophies" layoutX="181.0" layoutY="23.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="25.0" style="-fx-background-color: #2e3c51;">
+                  <Button fx:id="trophies" layoutX="181.0" layoutY="23.0" mnemonicParsing="false" onAction="#achievementButton" prefHeight="49.0" prefWidth="25.0" style="-fx-background-color: #2e3c51;">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <graphic>
-                        <ImageView fitHeight="66.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="achievement" fitHeight="66.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/trophy.png" />
                            </image>

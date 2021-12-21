@@ -54,6 +54,11 @@ public class WordGameController implements Initializable{
     }
 
     @FXML
+    private void achievementButton() throws IOException{
+        m.changeScene("achievements.fxml");
+    }
+
+    @FXML
     private void checkButton() {
         if(currentWord < randomWords.size()) {
             if (game.translationCheck(randomWords.get(currentWord), translationField.getText().toString())) {
