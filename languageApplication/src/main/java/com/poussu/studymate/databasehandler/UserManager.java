@@ -10,7 +10,16 @@ import com.poussu.studymate.userdata.User;
 
 public class UserManager {
 
-    //Used for adding a new user in the database.
+    
+    /** 
+     * Used for checking if the user is in the database and creating a user object if database contains the user. 
+     * Is given the name or email of the account and the password of the account.
+     * @param name username of the account or email of the account
+     * @param password password of the account
+     * @return User with filled details if login details were correct
+     * @throws SQLException
+     */
+
     public User getLoggedUser(String name, String password) throws SQLException {
                 
         Connection conn = null;

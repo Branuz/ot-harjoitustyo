@@ -7,6 +7,12 @@ import java.sql.Statement;
 
 public class DatabaseUpdater {
 
+    
+    /** Inserts, updates and deletes from database with given connection, statement and parameters.
+     * @param conn connection for the database
+     * @param statement statement to be inserted for the database
+     * @param userPara parameters of the statamenet
+     */
     //Does update executions such as deletions and insertions of lists and words.
     public void databaseInsert(Connection conn, String statement, String[] userPara) {
         PreparedStatement p = null;
@@ -31,7 +37,13 @@ public class DatabaseUpdater {
         
     }
 
-    //Used for creating new tables in the database
+    
+    /** 
+     * Creates a new table for the database with given connection and statement
+     * @param conn connection for the table creation
+     * @param statement statamenet for table creation
+     */
+    
     public void databaseCreate(Connection conn, String statement) {
         Statement s  = null;
 

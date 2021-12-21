@@ -10,7 +10,16 @@ import com.poussu.studymate.dictionary.WordList;
 
 public class ListManager {
 
-    //Fetches all the words from the database and makes corresponding lists of them based on their names.
+    
+    /** 
+     * Fetches all the words from the database and makes corresponding lists of them based on their names
+     * with given connection and users information.
+     * @param conn connection for the database
+     * @param user users information 
+     * @return ArrayList<WordList> which contains all the wordLists that were created
+     * @throws SQLException
+     */
+    
     public ArrayList<WordList> getSavedLists(Connection conn, String user) throws SQLException {
         ResultSet rs = null;
         Statement s = null;
@@ -30,7 +39,6 @@ public class ListManager {
                 }
             }
 
-            //Returns a list which contains all the wordlists created.
             return lists;
             
         } finally {
