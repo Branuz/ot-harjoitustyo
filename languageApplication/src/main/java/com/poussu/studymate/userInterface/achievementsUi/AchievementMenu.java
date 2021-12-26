@@ -2,17 +2,10 @@ package com.poussu.studymate.userInterface.achievementsUi;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.Map.Entry;
-import java.util.stream.Stream;
 
 import com.poussu.studymate.StudyMateUi;
-import com.poussu.studymate.databasehandler.ConnectionManager;
-import com.poussu.studymate.databasehandler.TrophyManager;
-import com.poussu.studymate.trophies.Trophy;
-import com.poussu.studymate.userInterface.startUI.Login;
+import com.poussu.studymate.trophies.AllTrophies;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,7 +14,6 @@ import javafx.scene.image.ImageView;
 public class AchievementMenu implements Initializable {
 
     private StudyMateUi m = new StudyMateUi();
-    private Login l = new Login();
 
     @FXML
     ImageView hunredWordIcon;
@@ -43,21 +35,8 @@ public class AchievementMenu implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        TrophyManager tm = new TrophyManager();
-        try {
-            Connection conn = ConnectionManager.getConnection();
-            Stream<Entry<String, Trophy>> trophies = tm.getSavedLists(conn, l.getLoggedUser().getName())
-            .getList().entrySet().stream()
-            .filter(a->a.getValue().getCompleted());
-            
-            trophies.forEach(x -> shadowChange(x.getValue().getName()));            
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        
+        AllTrophies trophies = new AllTrophies();
+        trophies.getCompletedTrophies().forEach(names -> shadowChange(names));        
     }
     
     @FXML

@@ -10,9 +10,11 @@ import com.poussu.studymate.StudyMateUi;
 import com.poussu.studymate.databasehandler.ConnectionManager;
 import com.poussu.studymate.databasehandler.DatabaseUpdater;
 import com.poussu.studymate.dictionary.Word;
+import com.poussu.studymate.trophies.AllTrophies;
 import com.poussu.studymate.userInterface.startUI.Login;
 import com.poussu.studymate.wordgame.WordGame;
 
+import javafx.animation.PauseTransition;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,6 +26,8 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.StackPane;
+import javafx.util.Duration;
 
 public class DictionaryAddWord extends DictionaryMenu {
     @FXML
@@ -38,6 +42,9 @@ public class DictionaryAddWord extends DictionaryMenu {
     @FXML
     private TableColumn<Word, String> translations;
 
+    @FXML
+    StackPane trophyPopper;
+
     private ObservableList<Word> listItems = FXCollections.observableArrayList();
 
     private StudyMateUi m = new StudyMateUi();
@@ -46,6 +53,22 @@ public class DictionaryAddWord extends DictionaryMenu {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        DatabaseUpdater manager = new DatabaseUpdater();
+        Connection conn;
+
+        AllTrophies trophies = new AllTrophies();
+        if(!trophies.getCompletedTrophies().contains("firstList")) {
+            showTrophyPopUp();
+        }
+
+        try {
+            conn = ConnectionManager.getConnection();
+            String trophyStatement = "INSERT INTO Trophies(trophy, user) VALUES (?,?)";
+            String[] trophyValueStrings = {"firstList", l.getLoggedUser().getName()};
+            manager.databaseInsert(conn, trophyStatement, trophyValueStrings);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
         WordGame game = new WordGame();
         if(menu.getEditList()!=null){
@@ -103,6 +126,10 @@ public class DictionaryAddWord extends DictionaryMenu {
         table.setItems(listItems);
         
        if(listItems.size() == 20) {
+           AllTrophies trophies = new AllTrophies();
+           if(!trophies.getCompletedTrophies().contains("listOfTwentyWords")) {
+               showTrophyPopUp();
+           }
            conn = ConnectionManager.getConnection();
            String trophyStatement = "INSERT INTO Trophies(trophy, user) VALUES (?,?)";
            String[] trophyValueStrings = {"listOfTwentyWords", l.getLoggedUser().getName()};
@@ -157,5 +184,12 @@ public class DictionaryAddWord extends DictionaryMenu {
             });
             return cell ;
         });
+    }
+
+    private void showTrophyPopUp() {
+        trophyPopper.setVisible(true);
+        PauseTransition visiblePause = new PauseTransition(Duration.seconds(5));
+        visiblePause.setOnFinished(event -> trophyPopper.setVisible(false));
+        visiblePause.play();
     }
 }

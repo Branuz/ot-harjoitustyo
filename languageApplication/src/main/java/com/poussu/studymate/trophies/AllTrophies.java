@@ -1,5 +1,14 @@
 package com.poussu.studymate.trophies;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.stream.Stream;
+
+import com.poussu.studymate.databasehandler.ConnectionManager;
+import com.poussu.studymate.databasehandler.TrophyManager;
+import com.poussu.studymate.userInterface.startUI.Login;
 
 public class AllTrophies {
     private HashMap<String,Trophy> list;
@@ -16,5 +25,27 @@ public class AllTrophies {
 
     public HashMap<String, Trophy> getList() {
         return list;
+    }
+
+    public ArrayList<String> getCompletedTrophies() {
+        ArrayList<String> completed = new ArrayList<>();
+        Login l = new Login();
+
+        TrophyManager tm = new TrophyManager();
+        try {
+            Connection conn = ConnectionManager.getConnection();
+            Stream<Entry<String, Trophy>> trophies = tm.getSavedLists(conn, l.getLoggedUser().getName())
+            .getList().entrySet().stream()
+            .filter(a->a.getValue().getCompleted());
+            
+            trophies.forEach(x -> completed.add(x.getValue().getName()));            
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return completed;
     }
 }
