@@ -44,7 +44,7 @@ Löydät testaustiedoston [täältä](https://github.com/Branuz/ot-harjoitustyo/
 
 Testauksen haarautumiskattavuus on 93%.
 
-![coverage report](./documents/photos/testikattavuus.png)
+![coverage report](./photos/testikattavuus.png)
 
 Testauksen ulkopuolelle on jätetty userInterface -hakemiston tiedostot.
 
