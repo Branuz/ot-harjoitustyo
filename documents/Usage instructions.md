@@ -1,6 +1,6 @@
 <h2>Usage instructions </h2>
 
-
+First download the application studymate.jar from [release](https://github.com/Branuz/ot-harjoitustyo/releases/tag/viikko7)
 
 <h3>Application start</h3>
 
