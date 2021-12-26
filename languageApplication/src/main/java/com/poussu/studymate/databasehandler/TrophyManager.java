@@ -9,6 +9,15 @@ import com.poussu.studymate.trophies.AllTrophies;
 
 public class TrophyManager {
     
+    
+    /** 
+     * Fetches all the trophies that are are available for the user and updates their completion statuses if the user has done them. 
+     * Requires a connection and username.
+     * @param conn connection for the database
+     * @param user username information
+     * @return AllTrophies after updating their completion status
+     * @throws SQLException
+     */
     public AllTrophies getSavedLists(Connection conn, String user) throws SQLException {
         ResultSet rs = null;
         Statement s = null;

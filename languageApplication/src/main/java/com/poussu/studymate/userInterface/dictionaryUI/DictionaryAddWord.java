@@ -51,6 +51,12 @@ public class DictionaryAddWord extends DictionaryMenu {
     private Login l = new Login();
     private DictionaryMenu menu = new DictionaryMenu();
 
+    
+    /** 
+     * Initializes the wordlist view if there is any excisting words it shows them in the interface. Also checks if it is the first time making a list.
+     * @param url
+     * @param rb
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         DatabaseUpdater manager = new DatabaseUpdater();
@@ -86,26 +92,51 @@ public class DictionaryAddWord extends DictionaryMenu {
         cellEditorSettings();
     }
 
+    
+    /** 
+     * Logs the user out of the application.
+     * @throws IOException
+     */
     @FXML
     private void logOutButton() throws IOException {
         m.changeScene("login-view.fxml");
     }
 
+    
+    /** 
+     * Forwards user into the main menu of the application.
+     * @throws IOException
+     */
     @FXML
     private void mainMenuButton() throws IOException {
         m.changeScene("main-menu.fxml");
     }
 
+    
+    /** 
+     * Forwards user back into the dictionary menu of the application.
+     * @throws IOException
+     */
     @FXML
     private void doneButton() throws IOException {
         m.changeScene("dictionary-menu.fxml");
     }
 
+    
+    /** 
+     * Forwards user into the trophies section of the application.
+     * @throws IOException
+     */
     @FXML
     private void achievementButton() throws IOException{
         m.changeScene("achievements.fxml");
     }
 
+    
+    /** 
+     * Adds the given word into the interface view and inserts it into the database. Also checks if any trophies are earned during the action.
+     * @throws SQLException
+     */
     @FXML
     private void addWord() throws SQLException {
         Connection conn = null;
@@ -144,6 +175,11 @@ public class DictionaryAddWord extends DictionaryMenu {
     }
     }
 
+    
+    /** 
+     * List needed for the words to be shown in the interface
+     * @return ObservableList<Word>
+     */
     public ObservableList<Word> getListItems() {
         return listItems;
     }

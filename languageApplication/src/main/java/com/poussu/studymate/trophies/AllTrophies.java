@@ -11,22 +11,33 @@ import com.poussu.studymate.databasehandler.TrophyManager;
 import com.poussu.studymate.userInterface.startUI.Login;
 
 public class AllTrophies {
+    
     private HashMap<String,Trophy> list;
-
+    
     public AllTrophies(){
         this.list = new HashMap<>();
-        list.put("hunredTranslated", new Trophy("hunredTranslated", false, 100, "Word"));
-        list.put("fiftyTranslated", new Trophy("fiftyTranslated", false, 50, "Word"));
-        list.put("tenTranslated", new Trophy("tenTranslated", false, 10, "Word"));
-        list.put("firstGame", new Trophy("firstGame", false, 1, "Game"));
-        list.put("listOfTwentyWords", new Trophy("listOfTwentyWords", false, 20, "Word"));
-        list.put("firstList", new Trophy("firstList", false, 1, "List"));
+        list.put("hunredTranslated", new Trophy("hunredTranslated", false));
+        list.put("fiftyTranslated", new Trophy("fiftyTranslated", false));
+        list.put("tenTranslated", new Trophy("tenTranslated", false));
+        list.put("firstGame", new Trophy("firstGame", false));
+        list.put("listOfTwentyWords", new Trophy("listOfTwentyWords", false));
+        list.put("firstList", new Trophy("firstList", false));
     }
 
+    
+    /** 
+     * Used for getting the starting map containing all the trophies and their requirements using trophys name as a key and trophy as the value
+     * @return HashMap<String, Trophy> map containing all the trophies
+     */
     public HashMap<String, Trophy> getList() {
         return list;
     }
 
+    
+    /** 
+     * Used for getting a list containing the names of all the tropies the user has completed.
+     * @return ArrayList<String> containing the names of the completed trophies
+     */
     public ArrayList<String> getCompletedTrophies() {
         ArrayList<String> completed = new ArrayList<>();
         Login l = new Login();

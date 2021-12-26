@@ -68,7 +68,7 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="68.0" layoutY="200.0" mnemonicParsing="false" onAction="#dictionaryButton" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Dictionary" textFill="WHITE">
+            <Button layoutX="68.0" layoutY="250.0" mnemonicParsing="false" onAction="#dictionaryButton" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Dictionary" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -76,15 +76,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="68.0" layoutY="325.0" mnemonicParsing="false" onAction="#wordGameButton" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Word Game" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="68.0" layoutY="75.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Chapters" textFill="WHITE">
+            <Button layoutX="68.0" layoutY="119.0" mnemonicParsing="false" onAction="#wordGameButton" prefHeight="40.0" prefWidth="294.0" style="-fx-background-color: #37c6cc;" text="Word Game" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>

@@ -3,45 +3,50 @@ package com.poussu.studymate.trophies;
 public class Trophy {
    private String name;
    private boolean completed;
-   private int requirement;
-   private String type;
 
-    public Trophy(String name, boolean completed, int requirement, String type) {
+    /**
+     * Consturctor which contains the name and the completion status of a trophy
+     * @param name of the trophy
+     * @param completed completion status of the trophy
+     */
+
+    public Trophy(String name, boolean completed) {
         this.name = name;
         this.completed = completed;
-        this.requirement = requirement;
-        this.type = type;
     }
 
+    
+    /** 
+     * Used for setting the name of the trophy
+     * @param name of the trophy
+     */
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setRequirement(int requirement) {
-        this.requirement = requirement;
-    }
-
+    
+    /** 
+     * Used for setting the completion of the trophy
+     * @param completed
+     */
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
+    
+    /** 
+     * Used for getting the name of the trophy
+     * @return String name of the trophy
+     */
     public String getName() {
         return this.name;
     }
-
-    public String getType() {
-        return this.type;
-    }
-
+    
+    /** 
+     * Used for getting the completion of the trophy
+     * @return boolean completion status
+     */
     public boolean getCompleted() {
         return this.completed;
     }
 
-    public int getRequirement(){
-        return this.requirement;
-    }
 }

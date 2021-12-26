@@ -33,27 +33,52 @@ public class AchievementMenu implements Initializable {
     @FXML
     ImageView firstList;
 
+    
+    /** 
+     * Initializes the view of interface by showing those trophies that have been earned and keeping the rest hidden
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         AllTrophies trophies = new AllTrophies();
         trophies.getCompletedTrophies().forEach(names -> shadowChange(names));        
     }
     
+    
+    /** 
+     * Logs the user out of the application
+     * @throws IOException
+     */
     @FXML
     private void logOutButton() throws IOException {
         m.changeScene("login-view.fxml");
     }
 
+    
+    /** 
+     * Forwards user into the mainmenu of the application.
+     * @throws IOException
+     */
     @FXML
     private void mainMenuButton() throws IOException {
         m.changeScene("main-menu.fxml");
     }
 
+    
+    /** 
+     * Forwards user into the trophies section of the application.
+     * @throws IOException
+     */
     @FXML
     private void achievementButton() throws IOException{
         m.changeScene("achievements.fxml");
     }
 
+    
+    /** Changes the given trophy visible in the interface
+     * @param name name of the given trophy
+     */
     @FXML
     private void shadowChange(String name){
         if ("hunredTranslated" == name) {
