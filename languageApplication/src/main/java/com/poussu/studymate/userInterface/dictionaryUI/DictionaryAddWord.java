@@ -63,7 +63,7 @@ public class DictionaryAddWord extends DictionaryMenu {
         Connection conn;
 
         AllTrophies trophies = new AllTrophies();
-        if(!trophies.getCompletedTrophies().contains("firstList")) {
+        if(!trophies.getCompletedTrophies(l.getLoggedUser().getName()).contains("firstList")) {
             showTrophyPopUp();
         }
 
@@ -158,7 +158,7 @@ public class DictionaryAddWord extends DictionaryMenu {
         
        if(listItems.size() == 20) {
            AllTrophies trophies = new AllTrophies();
-           if(!trophies.getCompletedTrophies().contains("listOfTwentyWords")) {
+           if(!trophies.getCompletedTrophies(l.getLoggedUser().getName()).contains("listOfTwentyWords")) {
                showTrophyPopUp();
            }
            conn = ConnectionManager.getConnection();

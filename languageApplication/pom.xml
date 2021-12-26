@@ -87,6 +87,8 @@
                 <configuration>
                     <excludes>
                         <exclude>**/userInterface/**/*.class</exclude>
+                        <exclude>**/*Main.class</exclude>
+                        <exclude>**/*StudyMateUi.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>

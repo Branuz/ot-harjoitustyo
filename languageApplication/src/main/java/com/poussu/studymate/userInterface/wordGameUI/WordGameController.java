@@ -53,7 +53,7 @@ public class WordGameController implements Initializable{
         Connection conn;
         AllTrophies trophies = new AllTrophies();
         
-        if(!trophies.getCompletedTrophies().contains("firstGame")) {
+        if(!trophies.getCompletedTrophies(l.getLoggedUser().getName()).contains("firstGame")) {
             showTrophyPopUp();
         }
 
@@ -110,21 +110,21 @@ public class WordGameController implements Initializable{
                         AllTrophies trophies = new AllTrophies();
                         if(correcWordInRow==10) {
                             amount = "tenTranslated";
-                            if(!trophies.getCompletedTrophies().contains(amount)) {
+                            if(!trophies.getCompletedTrophies(l.getLoggedUser().getName()).contains(amount)) {
                                 showTrophyPopUp();
                             }
                         }
 
                         if(correcWordInRow==50) {
                             amount = "fiftyTranslated";
-                            if(!trophies.getCompletedTrophies().contains(amount)) {
+                            if(!trophies.getCompletedTrophies(l.getLoggedUser().getName()).contains(amount)) {
                                 showTrophyPopUp();
                             }
                         }
 
                         if(correcWordInRow==100) {
                             amount = "hunredTranslated";
-                            if(!trophies.getCompletedTrophies().contains(amount)) {
+                            if(!trophies.getCompletedTrophies(l.getLoggedUser().getName()).contains(amount)) {
                                 showTrophyPopUp();
                             }
                         }

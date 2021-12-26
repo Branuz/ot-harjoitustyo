@@ -8,7 +8,6 @@ import java.util.stream.Stream;
 
 import com.poussu.studymate.databasehandler.ConnectionManager;
 import com.poussu.studymate.databasehandler.TrophyManager;
-import com.poussu.studymate.userInterface.startUI.Login;
 
 public class AllTrophies {
     
@@ -38,14 +37,13 @@ public class AllTrophies {
      * Used for getting a list containing the names of all the tropies the user has completed.
      * @return ArrayList<String> containing the names of the completed trophies
      */
-    public ArrayList<String> getCompletedTrophies() {
+    public ArrayList<String> getCompletedTrophies(String user) {
         ArrayList<String> completed = new ArrayList<>();
-        Login l = new Login();
 
         TrophyManager tm = new TrophyManager();
         try {
             Connection conn = ConnectionManager.getConnection();
-            Stream<Entry<String, Trophy>> trophies = tm.getSavedLists(conn, l.getLoggedUser().getName())
+            Stream<Entry<String, Trophy>> trophies = tm.getSavedLists(conn, user)
             .getList().entrySet().stream()
             .filter(a->a.getValue().getCompleted());
             

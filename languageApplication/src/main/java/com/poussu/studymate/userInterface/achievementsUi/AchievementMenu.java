@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.poussu.studymate.StudyMateUi;
 import com.poussu.studymate.trophies.AllTrophies;
+import com.poussu.studymate.userInterface.startUI.Login;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +15,7 @@ import javafx.scene.image.ImageView;
 public class AchievementMenu implements Initializable {
 
     private StudyMateUi m = new StudyMateUi();
+    private Login l = new Login();
 
     @FXML
     ImageView hunredWordIcon;
@@ -42,7 +44,7 @@ public class AchievementMenu implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         AllTrophies trophies = new AllTrophies();
-        trophies.getCompletedTrophies().forEach(names -> shadowChange(names));        
+        trophies.getCompletedTrophies(l.getLoggedUser().getName()).forEach(names -> shadowChange(names));        
     }
     
     
