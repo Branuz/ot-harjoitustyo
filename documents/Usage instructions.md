@@ -4,7 +4,7 @@
 
 <h3>Application start</h3>
 
-To start the program run the command
+To start the program run the command in the folder where the application is located
 
 ```
 java -jar studymate.jar
@@ -22,6 +22,11 @@ To make a new account you need to fill up your email, username and matching set 
 
 <img src="https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/photos/newUser.png" width="400">
 
+<h2>Menu</h2>
+
+In the menu you get to choose between dictionary and wordgame and by pressing these buttons you will be forwarded to their corresponding interfaces. When you wish to logout of the game you can press the logout button at the top right corner of the application.
+
+<img src="https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/photos/applicationMenu.png" width="400">
 <h2>Dictionary</h2>
 
 In dictionary you can add new lists of words by first choosing the name for the list you wish to make and then pressing create new list button. You can also delete old lists or edit them by right clicking the chosen list and choosing "Edit" or "Delete".
@@ -33,3 +38,19 @@ Once you have pressed the create list button you are directed to a screen where 
 <img src="https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/photos/dictionaryAdding.png" width="400">
 
 By pressing Add you will add the current word to the list. By pressing the Done button the list will be completed and you will be forwarded back to the dictionary menu.
+
+<h2>Word Game</h2>
+
+When you click yourself into the word game you will first have to choose one or multiple lists of words you wish to practice with. Once you have done so by pressing the start game button you will start the game.
+
+<img src="https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/photos/gameMenu.png" width="400">
+
+In the game you will need to write down the translations of the words you have been given and by pressing the Check button it will see if the word is correct. If you give wrong answer you will be notified and you can try again or skip to the next word by pressing the Next button.
+
+<img src="https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/photos/inGameMenu.png" width="400">
+
+<h2>Trophies</h2>
+
+In the trophie section you can see all the trophies that are available and that you have earned. To findout how to complete a trophy you have not yet completed you can hover your mouse over the trophys icon in the interface.
+
+<img src="https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/photos/trophyMenu.png" width="400">
