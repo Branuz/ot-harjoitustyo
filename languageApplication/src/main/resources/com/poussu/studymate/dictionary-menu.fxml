@@ -71,12 +71,7 @@
    <left>
       <AnchorPane prefHeight="502.0" prefWidth="416.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="myListView" editable="true" layoutX="209.0" layoutY="75.0" prefHeight="347.0" prefWidth="214.0" />
-            <TextField layoutX="209.0" layoutY="7.0" prefHeight="38.0" prefWidth="215.0" promptText="Search">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
+            <ListView fx:id="myListView" editable="true" layoutX="209.0" layoutY="27.0" prefHeight="347.0" prefWidth="214.0" />
             <Label layoutX="11.0" layoutY="-2.0" prefHeight="57.0" prefWidth="198.0" text="Welcome to dictionary!" textFill="WHITE">
                <font>
                   <Font size="15.0" />
