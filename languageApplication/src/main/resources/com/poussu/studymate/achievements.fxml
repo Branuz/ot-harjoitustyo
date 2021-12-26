@@ -184,7 +184,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <graphic>
-                  <ImageView fx:id="listOfTwenty" fitHeight="66.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="listOfTwentyWords" fitHeight="66.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/008.png" />
                      </image>

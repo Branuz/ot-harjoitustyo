@@ -37,9 +37,12 @@ public class StudyMateUi extends Application {
         DatabaseUpdater db = new DatabaseUpdater();
         String setup = "CREATE TABLE  IF NOT EXISTS  Users (id INTEGER PRIMARY KEY, email TEXT, name TEXT, password TEXT);";
         String listSetup = "CREATE TABLE   IF NOT EXISTS  List (id INTEGER PRIMARY KEY, word TEXT, translation TEXT, user TEXT, name TEXT);";
+        String trophySetup = "CREATE TABLE   IF NOT EXISTS  Trophies (id INTEGER PRIMARY KEY, trophy TEXT, user TEXT);";
         db.databaseCreate(conn, setup);
         conn = ConnectionManager.getConnection();
         db.databaseCreate(conn, listSetup);
+        conn = ConnectionManager.getConnection();
+        db.databaseCreate(conn, trophySetup);
         launch();
     }
 }

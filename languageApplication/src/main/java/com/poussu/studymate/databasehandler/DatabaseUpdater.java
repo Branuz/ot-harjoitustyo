@@ -13,7 +13,7 @@ public class DatabaseUpdater {
      * @param statement statement to be inserted for the database
      * @param userPara parameters of the statamenet
      */
-    //Does update executions such as deletions and insertions of lists and words.
+    
     public void databaseInsert(Connection conn, String statement, String[] userPara) {
         PreparedStatement p = null;
         try {

@@ -101,16 +101,23 @@ public class DictionaryAddWord extends DictionaryMenu {
         words.setCellValueFactory(new PropertyValueFactory<Word, String>("word"));
         translations.setCellValueFactory(new PropertyValueFactory<Word, String>("translation"));
         table.setItems(listItems);
+        
+       if(listItems.size() == 20) {
+           conn = ConnectionManager.getConnection();
+           String trophyStatement = "INSERT INTO Trophies(trophy, user) VALUES (?,?)";
+           String[] trophyValueStrings = {"listOfTwentyWords", l.getLoggedUser().getName()};
+           manager.databaseInsert(conn, trophyStatement, trophyValueStrings);
+       } 
+
         wordField.setText("");
         translationField.setText("");
 
     } catch (Exception e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
     }
     }
 
-    public ObservableList<Word> getListItems(){
+    public ObservableList<Word> getListItems() {
         return listItems;
     }
 
