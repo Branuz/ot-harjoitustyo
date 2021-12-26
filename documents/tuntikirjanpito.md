@@ -12,4 +12,5 @@
 | 12.12 | 4    |Korjasin ilmentyneitä bugeja ja jatkoin wordgame function rakentamista  |
 | 13.12 | 4    |Sain wordgame function kokonaan toimintavalmiiksi  |
 | 14.12 | 7    |Lisäsin edit ja delete ominaisuuden listoihin ja sanoihin, loin uusia testejä ja aloitin javadoc kommenttien luomisen sekä paransin word gamen toimintaa|
-| yht   | 61   | | 
+| 21.12 | 4    |Tein achivements UI:n ja korjasin bugeja sekä lisäsin javdoc kommentteja  |
+| yht   | 65   | | 
