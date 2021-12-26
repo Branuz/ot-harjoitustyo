@@ -24,9 +24,9 @@ public class EveryList {
             String user = null;
             User loggedUser = l.getLoggedUser();
 
-            if(loggedUser==null) {
+            if (loggedUser == null) {
                 user = "TestAdmin";
-            }else{
+            } else {
                 user = loggedUser.getName();
             }
 

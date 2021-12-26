@@ -1,8 +1,8 @@
 package com.poussu.studymate.trophies;
 
 public class Trophy {
-   private String name;
-   private boolean completed;
+    private String name;
+    private boolean completed;
 
     /**
      * Consturctor which contains the name and the completion status of a trophy

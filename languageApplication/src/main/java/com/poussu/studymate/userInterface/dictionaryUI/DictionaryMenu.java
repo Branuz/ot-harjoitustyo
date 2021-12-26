@@ -72,7 +72,7 @@ public class DictionaryMenu implements Initializable{
     }
 
     //Adds editing and deleting for list items
-    private void cellEditorSettings(){
+    private void cellEditorSettings() {
         myListView.setCellFactory(lv -> {
 
             ListCell<String> cell = new ListCell<>();
@@ -87,7 +87,6 @@ public class DictionaryMenu implements Initializable{
                 try {
                     m.changeScene("dictionary-addNewMenu.fxml");
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             });

@@ -28,7 +28,7 @@ public class TrophyManager {
             rs = s.executeQuery("SELECT * FROM Trophies WHERE user='" + user + "';");
 
             while (rs.next()) {
-                if(trophies.getList().get(rs.getString("trophy"))!=null) {
+                if (trophies.getList().get(rs.getString("trophy")) != null) {
                     trophies.getList().get(rs.getString("trophy")).setCompleted(true);
                 }
             }

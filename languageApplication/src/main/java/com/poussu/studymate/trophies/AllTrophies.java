@@ -11,9 +11,9 @@ import com.poussu.studymate.databasehandler.TrophyManager;
 
 public class AllTrophies {
     
-    private HashMap<String,Trophy> list;
+    private HashMap<String, Trophy> list;
     
-    public AllTrophies(){
+    public AllTrophies() {
         this.list = new HashMap<>();
         list.put("hunredTranslated", new Trophy("hunredTranslated", false));
         list.put("fiftyTranslated", new Trophy("fiftyTranslated", false));
@@ -44,8 +44,8 @@ public class AllTrophies {
         try {
             Connection conn = ConnectionManager.getConnection();
             Stream<Entry<String, Trophy>> trophies = tm.getSavedLists(conn, user)
-            .getList().entrySet().stream()
-            .filter(a->a.getValue().getCompleted());
+                .getList().entrySet().stream()
+                .filter(a->a.getValue().getCompleted());
             
             trophies.forEach(x -> completed.add(x.getValue().getName()));            
 

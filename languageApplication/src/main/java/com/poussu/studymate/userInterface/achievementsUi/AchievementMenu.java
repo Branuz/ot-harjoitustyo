@@ -73,7 +73,7 @@ public class AchievementMenu implements Initializable {
      * @throws IOException
      */
     @FXML
-    private void achievementButton() throws IOException{
+    private void achievementButton() throws IOException {
         m.changeScene("achievements.fxml");
     }
 
@@ -82,7 +82,7 @@ public class AchievementMenu implements Initializable {
      * @param name name of the given trophy
      */
     @FXML
-    private void shadowChange(String name){
+    private void shadowChange(String name) {
         if ("hunredTranslated" == name) {
             hunredWordIcon.setEffect(null);
         }
