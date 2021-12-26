@@ -6,7 +6,7 @@ Harjoitustyön aiheena on kielen opiskelu ohjelma johon pystyy lisäämään ja 
 
 [Työaikakirjanpito](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/tuntikirjanpito.md)
 
-[Alustava määrittelydokumentti](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/specificationOfRequirements.md)
+[Määrittelydokumentti](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/specificationOfRequirements.md)
 
 [Alustava käyttöohje](https://github.com/Branuz/ot-harjoitustyo/blob/master/documents/Usage%20instructions.md)
 
